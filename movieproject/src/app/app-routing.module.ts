@@ -9,8 +9,8 @@ import { DetailspageComponent } from './detailspage/detailspage.component';
 const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: '', component: SplashscreenComponent },
-  { path: '', component: ProfilepageComponent },
-  { path: '', component: DetailspageComponent },
+  { path: 'profile', component: ProfilepageComponent },
+  { path: 'details', component: DetailspageComponent },
   
 
 
