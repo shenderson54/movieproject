@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { SplashscreenComponent } from './splashscreen/splashscreen.component';
 import { SearchComponent } from './search/search.component';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
-import { SigninupComponent } from './signinup/signinup.component';
 import { DetailspageComponent } from './detailspage/detailspage.component';
+import { SignInUpComponent } from './signinup/signinup.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +15,8 @@ import { DetailspageComponent } from './detailspage/detailspage.component';
     SplashscreenComponent,
     SearchComponent,
     ProfilepageComponent,
-    SigninupComponent,
-    DetailspageComponent
+    DetailspageComponent,
+
   ],
   imports: [
     BrowserModule,
