@@ -5,12 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SplashscreenComponent } from './splashscreen/splashscreen.component';
 import { SearchComponent } from './search/search.component';
+import { ProfilepageComponent } from './profilepage/profilepage.component';
+import { SigninupComponent } from './signinup/signinup.component';
+import { DetailspageComponent } from './detailspage/detailspage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SplashscreenComponent,
-    SearchComponent
+    SearchComponent,
+    ProfilepageComponent,
+    SigninupComponent,
+    DetailspageComponent
   ],
   imports: [
     BrowserModule,
