@@ -9,6 +9,7 @@ import { DetailspageComponent } from './detailspage/detailspage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MatButtonModule} from '@angular/material/button';
     SearchComponent,
     ProfilepageComponent,
     DetailspageComponent,
+  
 
   ],
   imports: [
@@ -25,7 +27,9 @@ import { MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

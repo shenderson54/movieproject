@@ -1,0 +1,33 @@
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    list-style-type: none;
+}
+
+li{
+    padding: 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    width: 950px;
+    height: 450px;
+    border: 1px black solid;
+    background-image: ;
+}
+
+input {
+    margin: 10px;
+}
+
+
