@@ -2,20 +2,7 @@
 
 
 
-ul {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    list-style-type: none;
-}
 
-li{
-    padding: 15px;
-}
-
-a {
-    text-decoration: none;
-}
 
 main {
     display: flex;
@@ -23,7 +10,7 @@ main {
 }
 
 .box {
-     width: 950px;
+    width: 950px;
     height: 550px;
     /* border: 1px black solid;   ←←← used for tracking purposes  commented out once  the bg img was implemented*/
 }

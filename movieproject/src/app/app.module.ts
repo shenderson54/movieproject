@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     SearchComponent,
     ProfilepageComponent,
     DetailspageComponent,
+    NavBarComponent,
   
 
   ],
