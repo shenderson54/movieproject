@@ -1,0 +1,73 @@
+img {
+    padding: 1em;
+    width: 20em;
+    height: 30em;
+    display: flex;
+    padding-top: 1em;
+}
+
+.menu-back {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+ 
+#info-box {
+    background-color: lightgrey;
+    display: flex;
+    padding-top: 1em;
+}
+
+.movieInfo {
+    padding: 1em;
+}
+
+.movieInfo h3 {
+    text-decoration: underline;
+}
+
+.movieInfo button {
+    margin-bottom: 1em;
+}
+
+.movieInfo span {
+    font-size: 12px;
+    position: relative;
+    right: 8.6em;
+    top: 1em;
+}
+
+.lists {
+    display: flex;
+}
+
+.cast-crew {
+    background-color: lightgrey;
+}
+
+.cast-crew h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#more-recomendations {
+    background-color: lightgrey;
+    margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    #info-box {
+        flex-direction: column;
+    }
+
+    .back-link {
+        padding: 1em;
+    }
+
+    img {
+        padding-top: 2em;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
