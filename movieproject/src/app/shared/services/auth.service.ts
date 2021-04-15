@@ -20,14 +20,12 @@ export class AuthService {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
     this.afAuth.authState.subscribe(user => {
-      // if (user) {
-      //   this.userData = user;
-      //   localStorage.setItem('user', JSON.stringify(this.userData));
-      //   JSON.parse(window.localStorage.getItem('user'));
-      // } else {
-      //   localStorage.setItem('user', null);
-      //   JSON.parse(window.localStorage.getItem('user')); //maybe do else signOut()
-      // }
+      if (user) {
+        this.userData = user;
+        localStorage.setItem('user', JSON.stringify(this.userData));
+      } else {
+        this.userData = null;
+      }
       console.log(user);
     })
   }
@@ -111,16 +109,17 @@ export class AuthService {
 
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
-    // const user = JSON.parse(window.localStorage.getItem('user'));
-    // return (user !== null && user.emailVerified !== false) ? true : false;
-    return false;
+    const existing = window.localStorage.getItem('user');
+    if (!existing) {
+      return false;
+    }
+    return true;
   }
 
   // Sign out 
   SignOut() {
     return this.afAuth.signOut().then(() => {
       window.localStorage.removeItem('user');
-      window.localStorage.setItem('user', 'null')//added by me may remove
       this.router.navigate(['sign-in']);
     })
   }
