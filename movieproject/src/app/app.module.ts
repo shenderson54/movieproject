@@ -12,6 +12,7 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    IvyCarouselModule
     
   ],
   providers: [],

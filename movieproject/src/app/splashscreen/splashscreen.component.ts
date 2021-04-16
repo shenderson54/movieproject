@@ -11,5 +11,13 @@ export class SplashscreenComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  images = [
+    { path: '/assets/thebreakfastclub.jpg' },
+    { path: '/assets/hackers.jpg' },
+    { path: '/assets/themonkeyking.jpg' },
+    { path: '/assets/sinister.jpg' }
 
+  ]
 }
+
+
