@@ -1,11 +1,11 @@
-<p>search-filters works!</p>
-
-
 <div class="searchFilters">
     <ul>
         <li>
             <label for="filterGenre">Genre</label>
-            <select name="filterGenre"></select>
+            <select name="filterGenre">
+                <option *ngFor='let genre of genres' value='{{genre}}'>{{genre}}</option>
+            </select>
+
         </li>
 
         <li>
