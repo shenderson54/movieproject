@@ -15,7 +15,11 @@ export class SplashscreenComponent implements OnInit {
     { path: '/assets/thebreakfastclub.jpg' },
     { path: '/assets/hackers.jpg' },
     { path: '/assets/themonkeyking.jpg' },
-    { path: '/assets/sinister.jpg' }
+    { path: '/assets/sinister.jpg' },
+    { path: '/assets/radioactive.jpg' },
+    { path: '/assets/matrixcat.jpg' },
+    { path: '/assets/theshining.jpg' },
+    { path: '/assets/AvatarExample.jpg' }
 
   ]
 }

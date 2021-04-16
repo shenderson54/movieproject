@@ -2,11 +2,21 @@ html,
 body,
 app-root {
     height: 100%;
+    
 }
 
 body {
     margin-bottom: 0;
     margin-top: 0;
+    width: 100%;
+     display: flex;
+    position: relative;
+    
+}
+
+.splashScreen {
+    /* background: linear-gradient(#e66465, #9198e5); */
+    background: linear-gradient(0deg, rgba(166, 166, 166, 1) 0%, rgba(255, 255, 255, 1) 29%);
 }
 
 .content-outer-container {
@@ -72,6 +82,7 @@ input {
 }
 
 carousel {
+    /* background: linear-gradient(#e66465, #9198e5); */
     height: 250px;
     /* // Carousel height */
 
@@ -110,7 +121,12 @@ carousel {
 }
 
 .pics {
-    margin-left: 575px;
+    padding-left: 14px;
+    padding-right: 50px;
+    width: 45%;
+    position: absolute;
+    top: 45em;
+    left: 35em;
 }
 
 .myName {
