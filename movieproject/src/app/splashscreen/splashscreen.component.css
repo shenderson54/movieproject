@@ -24,7 +24,7 @@ main {
 input {
     margin: 10px;
     position:absolute;
-    top:280px;
+    top:380px;
     left:650px; 
     width:450px;
     height: 30px;
@@ -34,12 +34,14 @@ input {
 #frontPageSearchButton {
      margin: 10px;
     position:absolute;
-    top:280px;
+    top: 380.5px;
     left:650px; 
     width:50px;
     height: 34px;
     border-radius: 10em;
     text-align: center;
 }
+
+
 
 
