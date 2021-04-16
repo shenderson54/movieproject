@@ -3,14 +3,16 @@
         <li>
             <label for="filterGenre">Genre</label>
             <select name="filterGenre">
-                <option *ngFor='let genre of genres' value='{{genre}}'>{{genre}}</option>
+                <option *ngFor='let genre of genres' value='{{genre}}'>{{genre.name}}</option>
             </select>
 
         </li>
 
         <li>
             <label for="filterSubgenre">Subgenre</label>
-            <select name="filterSubgenre"></select>
+            <select name="filterSubgenre">
+                <option *ngFor='let genre of genres' value='{{genre}}'>{{genre.name}}</option>
+            </select>
         </li>
 
         <li>
