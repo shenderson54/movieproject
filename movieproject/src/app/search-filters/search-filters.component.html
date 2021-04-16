@@ -17,12 +17,16 @@
 
         <li>
             <label for='filterCountry'>Country</label>
-            <select name='filterCountry'></select>
+            <select name='filterCountry'>
+                <option *ngFor='let country of countries' value="{{country}}">{{country.name}}</option>
+            </select>
         </li>
 
         <li>
             <label for='filterYear'>Year</label>
-            <select name="filterYear"></select>
+            <select name="filterYear">
+                <option *ngFor='let year of years' value="{{year}}">{{year}}</option>
+            </select>
         </li>
 
     </ul>
