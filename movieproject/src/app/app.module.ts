@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
+import { FilterPipe } from './search/filter.pipe';
 
 
 
@@ -24,6 +25,7 @@ import { SearchFiltersComponent } from './search-filters/search-filters.componen
     DetailspageComponent,
     NavBarComponent,
     SearchFiltersComponent,
+    FilterPipe,
 
 
   ],
