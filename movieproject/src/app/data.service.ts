@@ -87,4 +87,8 @@ export class DataService {
   ];
 
   constructor() { }
+
+  getGenres() {
+    return this.genres;
+  }
 }
