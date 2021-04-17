@@ -2,20 +2,22 @@
     <ul>
         <li>
             <label for="filterGenre">Genre</label>
-            <select name="filterGenre">
+            <select name="filterGenre" [(ngModel)]='filterGenre'>
+                <option [ngValue]="null">Choose a Genre</option>
                 <option *ngFor='let genre of genres' value='{{genre}}'>{{genre.name}}</option>
             </select>
 
         </li>
-        <!-- 
+
         <li>
             <label for="filterSubgenre">Subgenre</label>
-            <select name="filterSubgenre">
+            <select name="filterSubgenre" [(ngModel)]='filterSubgenre'>
+                <option [ngValue]="null">Choose a Subgenre</option>
                 <option *ngFor='let genre of genres' value='{{genre}}'>{{genre.name}}</option>
             </select>
         </li>
 
-        <li>
+        <!-- <li>
             <label for='filterCountry'>Country</label>
             <select name='filterCountry'>
                 <option *ngFor='let country of countries' value="{{country}}">{{country.name}}</option>

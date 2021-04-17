@@ -10,7 +10,9 @@ import { Genre } from './genre';
 })
 export class SearchFiltersComponent implements OnInit {
 
-  genres!: Genre[];
+  genres: Genre[] = []
+  filterGenre: string | null = null;
+  filterSubgenre: string | null = null;
 
   constructor(private data: DataService) { }
 
