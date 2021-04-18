@@ -22,6 +22,7 @@ export class SplashscreenComponent implements OnInit {
     { path: '/assets/AvatarExample.jpg' }
 
   ]
+  arrowsOutside = true
 }
 
 
