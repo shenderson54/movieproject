@@ -1,10 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Movieconfig } from './movieconfig';
 import { Genre } from './search-filters/genre';
+import { Keyword } from './search-filters/keyword';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+
+  movieDBConfig = this.http.get(`https://api.themoviedb.org/3/configuration?api_key=f94ce2edb07147fae6c5fe3d18acad2a`)
+
 
   genres: Genre[] = [
     {
@@ -86,9 +92,13 @@ export class DataService {
     }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getGenres() {
     return this.genres;
+  }
+
+  getKeyword(keyword: string) {
+    return this.http.get(`https://api.themoviedb.org/3/keyword/${keyword}?api_key=f94ce2edb07147fae6c5fe3d18acad2a`);
   }
 }

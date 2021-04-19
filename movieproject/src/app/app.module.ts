@@ -14,6 +14,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { FilterPipe } from './search/filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -38,6 +39,7 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatToolbarModule,
     FormsModule,
+    HttpClientModule,
 
   ],
   providers: [],
