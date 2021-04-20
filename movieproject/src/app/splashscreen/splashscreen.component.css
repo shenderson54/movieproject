@@ -27,6 +27,7 @@
 main {
     display: flex;
     justify-content: center;
+    padding-right: 125px;
 }
 
 .box {
@@ -66,8 +67,9 @@ carousel {
     /* background: linear-gradient(#e66465, #9198e5); */
     height: 250px;
     /* // Carousel height */
-
-    width: 630px;
+    border:2px solid white;
+    /* I am using the border to outline my box to make styling a little easier will remove once I'm finished */
+    width: 650px;
      /* // Carousel Width */
 
     min-width: 200;
@@ -76,7 +78,7 @@ carousel {
     -ms-overflow-style: 3;
      /* // The number of carousel cells that will be stored for in the DOM tree outside the scope. */
 
-    margin: 10;
+    margin: 1px;
      /* // Cell spacing */
 
     -webkit-appearance: 50;
@@ -86,7 +88,6 @@ carousel {
      /* // Animation duration */
 
     transition-timing-function: 'ease' 'ease-in' 'ease-out' 'ease-in-out' 'linear'='ease';
-    /* transition-timing-function: 'ease'| 'ease-in'| 'ease-out'| 'ease-in-out'| 'linear'='ease'; */
     /* // Smooth animation function */
 
     content: boolean=false ;
@@ -95,19 +96,22 @@ carousel {
     counter-increment: string=" / ";
     /* // Counter separator */
 
-    border-radius: 3em ;
+    border-radius: 1em ;
     /* // Border radius for carousel cells */
+
+    
     
     
 }
 
 .pics {
-    padding-left: 14px;
-    padding-right: 50px;
+     padding-left: 12px; 
+    
     width: 45%;
     position: absolute;
     top: 45em;
     left: 35em;
+    
 }
 
 .myName {
@@ -120,4 +124,10 @@ carousel {
 
 .dansName{
     color:darkgreen;
+}
+
+
+.pics-carousel {
+    border-radius: 1em;
+    padding-right: 1002px;
 }

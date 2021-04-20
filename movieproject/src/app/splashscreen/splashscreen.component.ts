@@ -23,6 +23,7 @@ export class SplashscreenComponent implements OnInit {
 
   ]
   arrowsOutside = true
+  
 }
 
 
