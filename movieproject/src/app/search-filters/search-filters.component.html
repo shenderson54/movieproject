@@ -21,29 +21,14 @@
         <!-- Have one for movie rating g,pg,pg-13,r,nc-17 -->
 
 
-        <!-- <li>
-            <label for='filterKeyword'>Keyword</label>
-            <select name='filterKeyword'>
-                <option *ngFor='let keyword of keywords' value="{{keyword}}">{{keyword.name}}</option>
-            </select>
-        </li> -->
-
         <li>
             <label for='filterKeyword2'>Keyword</label>
             <input name='filterKeyword2' type="text" (keyup)='onKey($event)'>
-            <div class="searchBox"></div>
+            <div class="searchBox" *ngFor='let result of results | async'>{{result.name}}</div>
         </li>
 
-        <!-- have 1 more keyword search when these 2 are sorted -->
+        <!-- Do it to where you can hit enter and it adds a keyword that you can remove with a little
+        x button on it or something. then you can add more keywords -->
 
     </ul>
-</div>
-
-<div class="allSearches">
-
-    <!-- <div class="searchResult" *ngFor='let result of results'>
-        <img>
-    <p>Put movie summary here</p>
-</div> -->
-
 </div>
