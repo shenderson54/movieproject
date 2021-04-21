@@ -22,8 +22,8 @@ export class SearchFiltersComponent implements OnInit {
   ratings: Rating[] = [];
   filterGenre: Genre | null = null;
   filterSubgenre: Genre | null = null;
+  filterRating: Rating | null = null;
   inputValue: string | null = null;
-  //results: Observable<any> | null = null;
 
 
   //for keyword autocomplete and chips
@@ -33,27 +33,23 @@ export class SearchFiltersComponent implements OnInit {
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   filteredKeywords: Observable<any> | null = null;
-  keywords: string[] = [''];
-  allKeywords: Observable<any> | null = null;
+  keywords: string[] = [];
 
   @ViewChild('keywordInput') keywordInput!: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete!: MatAutocomplete;
 
   constructor(private data: DataService,
-    private http: HttpClient) {
-    this.filteredKeywords = this.keywordControl.valueChanges.pipe(
-      map((keyword: string | null) => keyword ? this.filter(keyword) : this.allKeywords.slice())
-    )
-  }
+    private http: HttpClient) { }
 
   ngOnInit(): void {
     this.genres = this.data.getGenres();
     this.ratings = this.data.getRatings();
+    // this.keywords = this.data.getKeywords();
   }
 
   onKey(event: any) {
     this.inputValue = event.target.value;
-    return this.allKeywords = this.http.get(
+    return this.filteredKeywords = this.http.get(
       `https://api.themoviedb.org/3/search/keyword?api_key=f94ce2edb07147fae6c5fe3d18acad2a&query=${this.inputValue}&page=1`
     )
       .pipe(map((data: any) => data.results))
@@ -61,20 +57,15 @@ export class SearchFiltersComponent implements OnInit {
 
   }
 
-  add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
+  add(event: any): void {
 
-    //add keyword
-    if ((value || '').trim()) {
-      this.keywords.push(value.trim());
-    };
+    this.keywords.push(event.name);
 
     //reset input value
-    if (input) {
-      input.value = '';
-    };
     this.keywordControl.setValue(null);
+
+
+
   };
 
   remove(keyword: string): void {
@@ -89,12 +80,6 @@ export class SearchFiltersComponent implements OnInit {
     this.keywords.push(event.option.viewValue);
     this.keywordInput.nativeElement.value = '';
     this.keywordControl.setValue(null);
-  };
-
-  private filter(value: string) {
-    const filterValue = value.toLowerCase();
-
-    return this.allKeywords.filter(keyword => keyword.toLowerCase().indexOf(filterValue) === 0);
   };
 
 

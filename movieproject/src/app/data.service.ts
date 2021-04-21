@@ -139,7 +139,7 @@ export class DataService {
       order: 7
     },
     {
-      certification: "RC",
+      certification: "Refused Classification(RC)",
       meaning: "Refused Classification. Banned from sale or hire in Australia; also generally applies to importation (if inspected by and suspicious to Customs). Private Internet viewing is unenforced and attempts to legally censor such online material has resulted in controversy. Films are rated RC if their content exceeds the guidelines. The content is very high in impact.",
       order: 8
     },

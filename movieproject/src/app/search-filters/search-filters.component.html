@@ -25,18 +25,6 @@
             </select>
         </li>
 
-        <!-- <li>
-            <form class="searchBox">
-                <input type="text" placeholder="Search Keywords" [formControl]="control" [matAutocomplete]="auto"
-                    (keyup)='onKey($event)'>
-                <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let result of results | async" [value]="result">
-                        {{result.name}}
-                    </mat-option>
-                </mat-autocomplete>
-            </form>
-        </li> -->
-
         <mat-form-field class="example-chip-list">
             <mat-label>Added Keywords</mat-label>
             <mat-chip-list #chipList aria-label="Keyword selection">
@@ -47,16 +35,14 @@
                 </mat-chip>
                 <input placeholder="Search Keywords" #keywordInput [formControl]="keywordControl"
                     [matAutocomplete]="auto" [matChipInputFor]="chipList"
-                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (keyup)='onKey($event)'
-                    (matChipInputTokenEnd)="add($event)">
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (keyup)='onKey($event)'>
             </mat-chip-list>
-            <mat-autocomplete #auto="matAutocomplete">
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)='add($event.option.value)'>
                 <mat-option *ngFor="let keyword of filteredKeywords | async" [value]="keyword">
                     {{keyword.name}}
                 </mat-option>
             </mat-autocomplete>
         </mat-form-field>
-        <!-- Do it to where you can hit enter and it adds a keyword that you can remove with a little
-        x button on it or something. then you can add more keywords. Need to make options clickable.  -->
+
     </ul>
 </div>

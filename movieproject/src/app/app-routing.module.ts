@@ -7,7 +7,7 @@ import { DetailspageComponent } from './detailspage/detailspage.component';
 
 
 const routes: Routes = [
-  { path: 'search/:id', component: SearchComponent },
+  { path: 'search', component: SearchComponent },
   { path: '', component: SplashscreenComponent },
   { path: 'profile', component: ProfilepageComponent },
   { path: 'details', component: DetailspageComponent },
