@@ -79,3 +79,50 @@
     }
 
 }
+
+@media screen and (min-width: 1020px){
+    .profile-box {
+      margin-left: 230px;
+      margin-top: 50px;
+      border: 2px solid black;
+      width: 1450px;
+      height: 800px;
+      color: white;
+      box-shadow: silver;
+    }
+
+    img {
+      height: 250px;
+      width: 25%;
+      /* border-radius: 50%; */
+      margin-top: 0px;
+      margin-right: 175px;
+    }
+
+    .recent-views {
+      width: 250px;
+      height: 130px;
+      border: 2px solid black;
+      background-color: thistle;
+
+    }
+
+    .back {
+      height: 50px;
+      width: 75px;
+      border-radius: 50%;
+      margin-top: 10px;
+      margin-left: 195px;
+      align-items: center;
+    }
+
+    h3,
+    p,
+    .recent-views {
+      margin-left: 15px;
+    }
+
+    span {
+      color: rgba(98, 5, 5, 0.979);
+    }
+}
