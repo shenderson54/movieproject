@@ -13,8 +13,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { FilterPipe } from './search/filter.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
+import { MatChipsModule } from '@angular/material/chips';
 
 
 
@@ -38,7 +41,11 @@ import { HttpClientModule } from '@angular/common/http'
     MatSliderModule,
     MatButtonModule,
     MatToolbarModule,
+    MatFormFieldModule,
+    MatChipsModule,
+    MatAutocompleteModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
 
   ],
