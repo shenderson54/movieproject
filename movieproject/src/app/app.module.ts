@@ -12,6 +12,9 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 
 @NgModule({
@@ -21,6 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchComponent,
     ProfilepageComponent,
     DetailspageComponent,
+    NavBarComponent,
+    SearchBarComponent,
   
 
   ],
@@ -33,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatToolbarModule,
     HttpClientModule
+    IvyCarouselModule
     
   ],
   providers: [],

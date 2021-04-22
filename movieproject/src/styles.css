@@ -4,5 +4,32 @@
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+         /* background: linear-gradient(rgba(25, 25, 25, 0.2), rgba(100, 150, 200, 0.5)); */ /* don't remove lines 8 thru 21 as they are different background screen colors
+         /* background: #000046; */
+         /* fallback for old browsers */
+         /* background: -webkit-linear-gradient(to right, #1CB5E0, #000046); */
+         /* Chrome 10-25, Safari 5.1-6 */
+         /* background: linear-gradient(to right, #1CB5E0, #000046); */
+         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+         /* background: #200122;
+         /* fallback for old browsers */
+         /* background: -webkit-linear-gradient(to right, #6f0000, #200122); */ 
+         /* Chrome 10-25, Safari 5.1-6 */
+         /* background: linear-gradient(to right, #6f0000, #200122); */ 
+         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+         background: #42275a;
+         /* fallback for old browsers */
+         background: -webkit-linear-gradient(to right, #734b6d, #42275a);
+         /* Chrome 10-25, Safari 5.1-6 */
+         background: linear-gradient(to right, #734b6d, #42275a);
+         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+
+}
 

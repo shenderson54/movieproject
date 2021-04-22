@@ -1,16 +1,4 @@
-<header>
-    <nav class='titlebar'>
-        <mat-toolbar>
-            <span>Logo</span>
-        <ul>
-            <li class='movieUniverse'><a href="#">Movie Universe</a></li>
-            <li class='top 10'><a href="#">Top 10</a></li>
-            <li class='login'><a href="#">Login</a></li>
-            <li class='signUp'><a href="#">Create an account</a></li>
-        </ul>
-        </mat-toolbar>
-    </nav>    
-</header>
+
 
 <main class=splashScreen>
 
@@ -18,13 +6,28 @@
 
         <img src="/assets/pageBackgroundImg.jpg" id="bg" alt="">
         
-        <input placeholder='Search for movies'>
+        <input placeholder='Search       for movies'>
         
-        <button  id= frontPageSearchButtonmat-raised-button color="primary">Search</button>
+        <button  id= frontPageSearchButton mat-raised-button color="primary">Search</button>
 
     </div>
 
     
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+
 
 </main>
+
+<carousel class="pics"
+ 
+    [images]="images" [arrowsOutside] = "arrowsOutside">
+   
+</carousel>
+
+<div class="content-outer-container">
+    <div class="content-inner-container">
+        <h1 class="app-title centered"></h1>
+    </div>
+</div>
+<div class="footer-container">
+    <p class="footer-content"><span class="myName">Steven</span> <span class="mitchsName"> Mitch </span> <span class="dansName">Dan</span>...The crime fighting coding trio &copy; 2021</p>
+</div>
