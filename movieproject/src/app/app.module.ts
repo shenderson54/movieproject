@@ -37,7 +37,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     MatSliderModule,
     MatButtonModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
     IvyCarouselModule
     
   ],
