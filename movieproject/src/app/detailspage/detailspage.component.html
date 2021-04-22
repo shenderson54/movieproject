@@ -1,15 +1,13 @@
 <a class="menu-back" href="#"> < Back To Movie Selection</a> 
 <div id="info-box">
-    <img class="movieImage" src="./assets/AvatarExample.jpg/">
+    <img class="movieImage" >{{ movie.poster_path }}
     <div class="movieInfo">
-    <h2>Movie Title!<span>(Year)Rated: Rating</span></h2>
+    <h2>{{ movie.original_title }}<span>{{ movie.release_date }} {{ movie.runtime }} {{ movie.status }}</span></h2>
     <button>+Add To Favorites</button>
     <h3>Summary:</h3>
-    <p>Lorem ipsum dolor sit amet consectetur 
-        adipisicing elit. Voluptatibus provident dolorum 
-        facilis cupiditate libero illo sit eos possimus 
-        accusamus laboriosam laudantium iusto quae, ullam 
-        at alias quibusdam nobis minus a.
+
+    <p>
+        {{ movie.overview }}
     </p>
     </div>
 </div>
