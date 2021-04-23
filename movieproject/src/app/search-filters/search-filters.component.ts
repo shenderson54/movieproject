@@ -24,7 +24,7 @@ export class SearchFiltersComponent implements OnInit {
   filterSubgenre: string | null = null;
   filterRating: Rating | null = null;
   inputValue: string | null = null;
-  query!: string;
+  query: string | null = null;
   rating: string | null = null;
 
 
@@ -48,6 +48,7 @@ export class SearchFiltersComponent implements OnInit {
     this.ratings = this.data.getRatings();
   }
 
+
   //genres functions
 
 
@@ -56,12 +57,6 @@ export class SearchFiltersComponent implements OnInit {
   //   this.genres.forEach((value, index) => {
   //     if (value.name === genre) this.genres.splice(index, 1)
   //   })
-  // }
-
-  // search() {
-  //   this.data.search(this.keywords, this.filterGenre, this.filterSubgenre, this.query, this.rating){
-  //     this.http.get(``)
-  //   }
   // }
 
 
@@ -106,6 +101,9 @@ export class SearchFiltersComponent implements OnInit {
     return false
   }
 
+  search() {
+    this.data.search(this.keywords, this.filterGenre, this.filterSubgenre, this.query, this.rating);
+  }
 
 
 }

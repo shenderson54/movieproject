@@ -155,7 +155,7 @@ export class DataService {
     return this.ratings;
   }
 
-  search(keywords: string[] | null, genre: string | null, subgenre: string | null, query: string, rating: string | null) {
+  search(keywords: string[] | null, genre: string | null, subgenre: string | null, query: string | null = null, rating: string | null) {
     this.http.get(``)
   }
 }
