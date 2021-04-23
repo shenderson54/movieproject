@@ -10,11 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { SearchFiltersComponent } from './search-filters/search-filters.component';
-import { FilterPipe } from './search/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -22,6 +18,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatChipInput, MatChipsModule } from '@angular/material/chips';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { SearchFiltersComponent } from './search-filters/search-filters.component';
+import { FilterPipe } from './search/filter.pipe';
 
 
 
@@ -33,13 +31,10 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     ProfilepageComponent,
     DetailspageComponent,
     NavBarComponent,
-
     SearchFiltersComponent,
     FilterPipe,
-
-
     SearchBarComponent,
-  
+
 
 
   ],
@@ -51,17 +46,13 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     MatSliderModule,
     MatButtonModule,
     MatToolbarModule,
-
     MatFormFieldModule,
     MatChipsModule,
     MatAutocompleteModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    IvyCarouselModule,
 
-   HttpClientModule,
-    IvyCarouselModule
-    
 
   ],
   providers: [],
