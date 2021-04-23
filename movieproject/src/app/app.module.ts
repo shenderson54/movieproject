@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatAutocompleteModule } from '@angular/material/autocomplete'
-import { MatChipsModule } from '@angular/material/chips';
+import { MatChipInput, MatChipsModule } from '@angular/material/chips';
 
 
 

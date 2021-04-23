@@ -1,11 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, EventEmitter } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { DataService } from '../data.service';
 import { Genre } from './genre';
 import { Rating } from './rating'
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
@@ -20,10 +20,12 @@ export class SearchFiltersComponent implements OnInit {
 
   genres: Genre[] = [];
   ratings: Rating[] = [];
-  filterGenre: Genre | null = null;
-  filterSubgenre: Genre | null = null;
+  filterGenre: string | null = null;
+  filterSubgenre: string | null = null;
   filterRating: Rating | null = null;
   inputValue: string | null = null;
+  query!: string;
+  rating: string | null = null;
 
 
   //for keyword autocomplete and chips
@@ -44,9 +46,28 @@ export class SearchFiltersComponent implements OnInit {
   ngOnInit(): void {
     this.genres = this.data.getGenres();
     this.ratings = this.data.getRatings();
-    // this.keywords = this.data.getKeywords();
   }
 
+  //genres functions
+
+
+
+  // genreSelected(genre: string) {
+  //   this.genres.forEach((value, index) => {
+  //     if (value.name === genre) this.genres.splice(index, 1)
+  //   })
+  // }
+
+  // search() {
+  //   this.data.search(this.keywords, this.filterGenre, this.filterSubgenre, this.query, this.rating){
+  //     this.http.get(``)
+  //   }
+  // }
+
+
+
+
+  //keywords functions
   onKey(event: any) {
     this.inputValue = event.target.value;
     return this.filteredKeywords = this.http.get(
@@ -57,15 +78,14 @@ export class SearchFiltersComponent implements OnInit {
 
   }
 
-  add(event: any): void {
+  selected(event: MatAutocompleteSelectedEvent): void {
+    let isSelected = this.isSelectedKeyword(event.option.viewValue);
 
-    this.keywords.push(event.name);
-
-    //reset input value
+    if (isSelected === false) {
+      this.keywords.push(event.option.viewValue);
+    }
+    this.keywordInput.nativeElement.value = '';
     this.keywordControl.setValue(null);
-
-
-
   };
 
   remove(keyword: string): void {
@@ -76,11 +96,16 @@ export class SearchFiltersComponent implements OnInit {
     };
   };
 
-  selected(event: MatAutocompleteSelectedEvent): void {
-    this.keywords.push(event.option.viewValue);
-    this.keywordInput.nativeElement.value = '';
-    this.keywordControl.setValue(null);
-  };
+
+  isSelectedKeyword(find: string) {
+    for (let keyword of this.keywords) {
+      if (keyword === find) {
+        return true
+      }
+    }
+    return false
+  }
+
 
 
 }

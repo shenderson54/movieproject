@@ -1,48 +1,55 @@
 <div class="searchFilters">
     <ul>
-        <li>
-            <label for="filterGenre">Genre</label>
-            <select name="filterGenre" [(ngModel)]='filterGenre'>
+        <li class="margin">
+            <label for="filterGenre" class="genreLabel">Genre</label>
+            <select name="filterGenre" [(ngModel)]='filterGenre' class="selectSize">
                 <option [ngValue]="null">Choose a Genre</option>
-                <option *ngFor='let genre of genres' value='{{genre}}'>{{genre.name}}</option>
+                <option *ngFor='let genre of genres' value='{{genre}}'>
+                    <span>{{genre.name}}</span>
+                </option>
             </select>
 
         </li>
 
-        <li>
-            <label for="filterSubgenre">Subgenre</label>
-            <select name="filterSubgenre" [(ngModel)]='filterSubgenre'>
+        <li class="margin">
+            <label for="filterSubgenre" class="subgenreLabel">Subgenre</label>
+            <select name="filterSubgenre" [(ngModel)]='filterSubgenre' class="selectSize">
                 <option [ngValue]="null">Choose a Subgenre</option>
-                <option *ngFor='let genre of genres' value='{{genre}}'>{{genre.name}}</option>
+                <option *ngFor='let genre of genres' value='{{genre}}'>
+                    <span>{{genre.name}}</span>
+                </option>
             </select>
         </li>
 
-        <li>
-            <label for="filterRating">Rating</label>
-            <select name="filterRating" [(ngModel)]='filterRating'>
+        <li class="margin">
+            <label for="filterRating" class="ratingLabel">Rating</label>
+            <select name="filterRating" [(ngModel)]='filterRating' class="selectSize">
                 <option [ngValue]='null'>Choose a Rating</option>
                 <option *ngFor='let rating of ratings' value='{{rating}}'>{{rating.certification}}</option>
             </select>
         </li>
 
-        <mat-form-field class="example-chip-list">
-            <mat-label>Added Keywords</mat-label>
-            <mat-chip-list #chipList aria-label="Keyword selection">
-                <mat-chip *ngFor="let keyword of keywords" [selectable]="selectable" [removable]="removable"
-                    (removed)="remove(keyword)">
-                    {{keyword}}
-                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-                </mat-chip>
-                <input placeholder="Search Keywords" #keywordInput [formControl]="keywordControl"
-                    [matAutocomplete]="auto" [matChipInputFor]="chipList"
-                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (keyup)='onKey($event)'>
-            </mat-chip-list>
-            <mat-autocomplete #auto="matAutocomplete" (optionSelected)='add($event.option.value)'>
-                <mat-option *ngFor="let keyword of filteredKeywords | async" [value]="keyword">
-                    {{keyword.name}}
-                </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
+        <div class="keywordDiv">
+            <mat-form-field class="example-chip-list">
+                <mat-label>Added Keywords</mat-label>
+                <mat-chip-list #chipList aria-label="Keyword selection">
+                    <mat-chip *ngFor="let keyword of keywords" [selectable]="selectable" [removable]="removable"
+                        (removed)="remove(keyword)" class="chipColor">
+                        {{keyword}}
+                        <mat-icon matChipRemove *ngIf="removable">x</mat-icon>
+                    </mat-chip>
+                    <input placeholder="Search Keywords" #keywordInput [formControl]="keywordControl"
+                        [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (keyup)='onKey($event)'>
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *ngFor="let keyword of filteredKeywords | async" [value]="keyword">
+                        {{keyword.name}}
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </div>
+
 
     </ul>
 </div>
