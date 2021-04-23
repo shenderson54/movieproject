@@ -21,12 +21,11 @@ export class SearchFiltersComponent implements OnInit {
 
   genres: Genre[] = [];
   ratings: Rating[] = [];
-  filterGenre: Genre | null = null;
-  filterSubgenre: Genre | null = null;
-  filterRating: Rating | null = null;
+  filterGenre: number | null = null;
+  filterSubgenre: number | null = null;
+  filterRating: string | null = null;
   inputValue: string | null = null;
   query: string | null = null;
-  rating: Rating | null = null;
 
 
 
@@ -105,8 +104,9 @@ export class SearchFiltersComponent implements OnInit {
     for (let keyword of this.keywords) {
       keywordsArray.push(keyword.id)
     }
+    console.log(this.filterGenre)
 
-    this.data.search(keywordsArray, this.filterGenre?.id, this.filterSubgenre?.id, this.query, this.rating).subscribe(response => console.log(response));
+    this.data.search(keywordsArray, this.filterGenre, this.filterSubgenre, this.query, this.filterRating).subscribe(response => console.log(response));
   }
 
 

@@ -141,30 +141,30 @@ export class DataService {
     return this.ratings;
   }
 
-  search(keywords: number[] | null, genre: number | undefined, subgenre: number | undefined, query: string | null = null, rating: Rating | null): Observable<any> {
+  search(keywords: number[], genre: number | null, subgenre: number | null, query: string | null = null, rating: string | null): Observable<any> {
     let url = '';
 
-    if (genre && subgenre) {
-      url = url + `&with_genre=${genre},${subgenre}`;
-    } else if (!genre && subgenre) {
-      url = url + `&with_genre=${subgenre}`;
-    } else if (genre && !subgenre) {
-      url = url + `&with_genre=${genre}`;
-    } else if (genre === subgenre) {
-      console.log('in genre')
-      url = url + `&with_genre=${genre}`;
-    }//DOESN't WORK, not entering if statement
+    if (genre && subgenre && genre !== subgenre) {
+      url += `&with_genres=${genre},${subgenre}`;
+    } else {
+      if (genre) {
+        url += `&with_genres=${genre}`;
+      } else if (subgenre) {
+        url += `&with_genres=${subgenre}`;
+      }
+    }
 
 
-    if (rating && rating.order === 5) {
+    console.log(rating)
+    if (rating && rating === 'NC-17') {
       url = url + `&certification_country=US&certification.gte=5`;
     } else if (rating) {
-      url = url + `&certification_country=US&certification=${rating.certification}`;
+      url = url + `&certification_country=US&certification=${rating}`;
     }//DOESN't WORK, not entering if statement
 
-    if (keywords) {
+    if (keywords.length) {
       let keywordString = keywords?.join(',');
-      url = url + `&with_keyword=${keywordString}`;
+      url = url + `&with_keywords=${keywordString}`;
     } //this one works, always done even when not supposed to
 
     if (query) {

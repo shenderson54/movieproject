@@ -11,7 +11,7 @@
             <label for="filterGenre" class="genreLabel">Genre</label>
             <select name="filterGenre" [(ngModel)]='filterGenre' class="selectSize">
                 <option [ngValue]="null">Choose a Genre</option>
-                <option *ngFor='let genre of genres' value='{{genre}}'>
+                <option *ngFor='let genre of genres' value='{{genre.id}}'>
                     <span>{{genre.name}}</span>
                 </option>
             </select>
@@ -22,7 +22,7 @@
             <label for="filterSubgenre" class="subgenreLabel">Subgenre</label>
             <select name="filterSubgenre" [(ngModel)]='filterSubgenre' class="selectSize">
                 <option [ngValue]="null">Choose a Subgenre</option>
-                <option *ngFor='let genre of genres' value='{{genre}}'>
+                <option *ngFor='let genre of genres' value='{{genre.id}}'>
                     <span>{{genre.name}}</span>
                 </option>
             </select>
@@ -32,7 +32,8 @@
             <label for="filterRating" class="ratingLabel">Rating</label>
             <select name="filterRating" [(ngModel)]='filterRating' class="selectSize">
                 <option [ngValue]='null'>Choose a Rating</option>
-                <option *ngFor='let rating of ratings' value='{{rating}}'>{{rating.certification}}</option>
+                <option *ngFor='let rating of ratings' value='{{rating.certification}}'>{{rating.certification}}
+                </option>
             </select>
         </li>
 
