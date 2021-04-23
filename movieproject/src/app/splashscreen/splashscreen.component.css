@@ -36,32 +36,13 @@ main {
     /* border: 1px black solid;   ←←← used for tracking purposes  commented out once  the bg img was implemented*/
 }
 
+
 #bg {
     width: 950px;
     height: 550px;
 
 }
 
-input {
-    margin: 10px;
-    position: absolute;
-    top: 380px;
-    left: 650px;
-    width: 450px;
-    height: 30px;
-    border-radius: 10em;
-}
-
-#frontPageSearchButton {
-    margin: 10px;
-    position: absolute;
-    top: 380.5px;
-    left: 650px;
-    width: 50px;
-    height: 34px;
-    border-radius: 10em;
-    text-align: center;
-}
 
 carousel {
     /* background: linear-gradient(#e66465, #9198e5); */

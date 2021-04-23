@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
+import { Keyword } from './keyword';
 
 
 @Component({
@@ -20,12 +21,12 @@ export class SearchFiltersComponent implements OnInit {
 
   genres: Genre[] = [];
   ratings: Rating[] = [];
-  filterGenre: string | null = null;
-  filterSubgenre: string | null = null;
-  filterRating: Rating | null = null;
+  filterGenre: number | null = null;
+  filterSubgenre: number | null = null;
+  filterRating: string | null = null;
   inputValue: string | null = null;
-  query!: string;
-  rating: string | null = null;
+  query: string | null = null;
+
 
 
   //for keyword autocomplete and chips
@@ -35,10 +36,12 @@ export class SearchFiltersComponent implements OnInit {
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   filteredKeywords: Observable<any> | null = null;
-  keywords: string[] = [];
+  keywords: Keyword[] = [];
 
   @ViewChild('keywordInput') keywordInput!: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete!: MatAutocomplete;
+
+
 
   constructor(private data: DataService,
     private http: HttpClient) { }
@@ -48,6 +51,7 @@ export class SearchFiltersComponent implements OnInit {
     this.ratings = this.data.getRatings();
   }
 
+
   //genres functions
 
 
@@ -56,12 +60,6 @@ export class SearchFiltersComponent implements OnInit {
   //   this.genres.forEach((value, index) => {
   //     if (value.name === genre) this.genres.splice(index, 1)
   //   })
-  // }
-
-  // search() {
-  //   this.data.search(this.keywords, this.filterGenre, this.filterSubgenre, this.query, this.rating){
-  //     this.http.get(``)
-  //   }
   // }
 
 
@@ -79,33 +77,40 @@ export class SearchFiltersComponent implements OnInit {
   }
 
   selected(event: MatAutocompleteSelectedEvent): void {
-    let isSelected = this.isSelectedKeyword(event.option.viewValue);
-
+    let isSelected = this.isSelectedKeyword(event.option.value.name);
     if (isSelected === false) {
-      this.keywords.push(event.option.viewValue);
+      this.keywords.push(event.option.value);
     }
     this.keywordInput.nativeElement.value = '';
     this.keywordControl.setValue(null);
   };
 
-  remove(keyword: string): void {
-    const index = this.keywords.indexOf(keyword);
 
-    if (index >= 0) {
-      this.keywords.splice(index, 1);
-    };
+
+  remove(keyword: number): void {
+    this.keywords.splice(keyword, 1)
   };
 
 
   isSelectedKeyword(find: string) {
     for (let keyword of this.keywords) {
-      if (keyword === find) {
+      if (keyword.name === find) {
         return true
       }
     }
     return false
   }
 
+  search() {
+    let keywordsArray = [];
+    for (let keyword of this.keywords) {
+      keywordsArray.push(keyword.id)
+    }
+
+    console.log(this.filterGenre)
+
+    this.data.search(keywordsArray, this.filterGenre, this.filterSubgenre, this.query, this.filterRating).subscribe(response => console.log(response));
+  }
 
 
 }

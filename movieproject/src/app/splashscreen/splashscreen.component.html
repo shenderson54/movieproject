@@ -4,22 +4,17 @@
 
         <img src="/assets/pageBackgroundImg.jpg" id="bg" alt="">
 
-        
-        <input placeholder='Search       for movies'>
-        
-        <button  id= frontPageSearchButton mat-raised-button color="primary">Search</button>
+        <app-search-filters></app-search-filters>
 
     </div>
 
-   
+
 
 
 </main>
 
-<carousel class="pics"
- 
-    [images]="images" [arrowsOutside] = "arrowsOutside">
-   
+<carousel class="pics" [images]="images" [arrowsOutside]="arrowsOutside">
+
 </carousel>
 
 <div class="content-outer-container">
@@ -28,5 +23,6 @@
     </div>
 </div>
 <div class="footer-container">
-    <p class="footer-content"><span class="myName">Steven</span> <span class="mitchsName"> Mitch </span> <span class="dansName">Dan</span>...The crime fighting coding trio &copy; 2021</p>
+    <p class="footer-content"><span class="myName">Steven</span> <span class="mitchsName"> Mitch </span> <span
+            class="dansName">Dan</span>...The crime fighting coding trio &copy; 2021</p>
 </div>
