@@ -1,0 +1,35 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.searchFilters{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 50%;
+
+}
+
+
+li{
+    list-style-type: none;
+}
+
+.margin{
+    margin: 10px;
+}
+
+.example-chip-list{
+    width: 100%;
+}
+
+.selectSize{
+    height: 25px;
+    width: 100%;
+}
+
+.chipColor{
+    background-color: #42275a;
+    color: white;
+}
