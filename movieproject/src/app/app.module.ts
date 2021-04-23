@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule} from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
@@ -30,10 +32,12 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
     MatToolbarModule,
+    HttpClientModule,
     IvyCarouselModule
     
   ],
