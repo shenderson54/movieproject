@@ -41,6 +41,8 @@ export class SearchFiltersComponent implements OnInit {
   @ViewChild('keywordInput') keywordInput!: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete!: MatAutocomplete;
 
+
+
   constructor(private data: DataService,
     private http: HttpClient) { }
 
@@ -104,6 +106,7 @@ export class SearchFiltersComponent implements OnInit {
     for (let keyword of this.keywords) {
       keywordsArray.push(keyword.id)
     }
+
     console.log(this.filterGenre)
 
     this.data.search(keywordsArray, this.filterGenre, this.filterSubgenre, this.query, this.filterRating).subscribe(response => console.log(response));

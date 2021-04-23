@@ -144,6 +144,7 @@ export class DataService {
   search(keywords: number[], genre: number | null, subgenre: number | null, query: string | null = null, rating: string | null): Observable<any> {
     let url = '';
 
+
     if (genre && subgenre && genre !== subgenre) {
       url += `&with_genres=${genre},${subgenre}`;
     } else {
@@ -160,20 +161,19 @@ export class DataService {
       url = url + `&certification_country=US&certification.gte=5`;
     } else if (rating) {
       url = url + `&certification_country=US&certification=${rating}`;
-    }//DOESN't WORK, not entering if statement
+    }
 
     if (keywords.length) {
       let keywordString = keywords?.join(',');
       url = url + `&with_keywords=${keywordString}`;
-    } //this one works, always done even when not supposed to
-
-    if (query) {
-      url = url + `&query=${query}`;
-    }//this one works, done correctly
-
+    }
 
     console.log(url)
+    if (query) {
+      url = url + `&query=${query}`;
+      return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}`);
+    }
     return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}`);
-    //RETURNS EVERY MOVIE IN DATABASE NOT FILTERED
+
   }
 }
