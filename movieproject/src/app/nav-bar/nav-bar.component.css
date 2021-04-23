@@ -5,6 +5,15 @@ ul {
     list-style-type: none;
 }
 
+.icon-title {
+    padding: 15px;
+}
+
+.icon {
+    height: 50px;
+    margin-left: 100px;
+}
+
 li{
     padding: 15px;
 }
