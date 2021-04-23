@@ -29,8 +29,10 @@ li{
     width: 100%;
 }
 
-.chipColor{
-    background-color: #42275a;
+label{
     color: white;
 }
 
+.whiteText{
+    color: white;
+}

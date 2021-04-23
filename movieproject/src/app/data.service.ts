@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Movieconfig } from './movieconfig';
 import { Genre } from './search-filters/genre';
 import { Keyword } from './search-filters/keyword';
@@ -128,21 +129,6 @@ export class DataService {
       meaning: "These films contain excessive graphic violence, intense or explicit sex, depraved, abhorrent behavior, explicit drug abuse, strong language, explicit nudity, or any other elements which, at present, most parents would consider too strong and therefore off-limits for viewing by their children and teens. NC-17 does not necessarily mean obscene or pornographic in the oft-accepted or legal meaning of those words.",
       order: 5
     },
-    {
-      certification: "18",
-      meaning: "Only adults are admitted. Nobody younger than 18 can rent or buy an 18-rated VHS, DVD, Blu-ray Disc, UMD or game, or watch a film in the cinema with this rating. Films under this category do not have limitation on the bad language that is used. Hard drugs are generally allowed, and explicit sex references along with detailed sexual activity are also allowed. Scenes of strong real sex may be permitted if justified by the context. Very strong, gory, and/or sadistic violence is usually permitted. Strong sexual violence is permitted unless it is eroticised or excessively graphic.",
-      order: 6
-    },
-    {
-      certification: "R18",
-      meaning: "Can only be shown at licensed adult cinemas or sold at licensed sex shops, and only to adults, those aged 18 or over. Films under this category are always hard-core pornography, defined as material intended for sexual stimulation and containing clear images of real sexual activity, strong fetish material, explicit animated images, or sight of certain acts such as triple simultaneous penetration and snowballing. There remains a range of material that is often cut from the R18 rating: strong images of injury in BDSM or spanking works, urolagnia, scenes suggesting incest even if staged, references to underage sex or childhood sexual development and aggressive behaviour such as hair-pulling or spitting on a performer are not permitted. More cuts are demanded in this category than any other category.",
-      order: 7
-    },
-    {
-      certification: "RC",
-      meaning: "Refused Classification. Banned from sale or hire in Australia; also generally applies to importation (if inspected by and suspicious to Customs). Private Internet viewing is unenforced and attempts to legally censor such online material has resulted in controversy. Films are rated RC if their content exceeds the guidelines. The content is very high in impact.",
-      order: 8
-    },
   ];
 
   constructor(private http: HttpClient) { }
@@ -155,7 +141,32 @@ export class DataService {
     return this.ratings;
   }
 
-  search(keywords: string[] | null, genre: string | null, subgenre: string | null, query: string | null = null, rating: string | null) {
-    this.http.get(``)
+  search(keywords: number[] | null, genre: number | undefined, subgenre: number | undefined, query: string | null = null, rating: Rating | null): Observable<any> {
+    let url = ''
+
+    if (keywords) {
+      let keywordString = keywords?.join(',');
+      url = url + `&with_keyword=${keywordString}`
+    }
+
+    if (genre && subgenre) {
+      url = url + `&with_genre=${genre},${subgenre}`
+    } else if (!genre && subgenre) {
+      url = url + `&with_genre=${subgenre}`
+    } else if (genre && !subgenre) {
+      url = url + `&with_genre=${genre}`
+    }
+
+    if (query) {
+
+    }
+
+    if (rating && rating.order === 5) {
+      url = url + `&certification_country=US&certification.gte=5`
+    } else if (rating) {
+      url = url + `&certification_country=US&certification=${rating.certification}`
+    }
+
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}`)
   }
 }

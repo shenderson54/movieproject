@@ -40,14 +40,14 @@
             <mat-form-field class="example-chip-list">
                 <mat-label>Added Keywords</mat-label>
                 <mat-chip-list #chipList aria-label="Keyword selection">
-                    <mat-chip *ngFor="let keyword of keywords" [selectable]="selectable" [removable]="removable"
-                        (removed)="remove(keyword)" class="chipColor">
-                        {{keyword}}
+                    <mat-chip *ngFor="let keyword of keywords; index as i" [selectable]="selectable"
+                        [removable]="removable" (removed)="remove(i)" class="chipColor">
+                        {{keyword.name}}
                         <mat-icon matChipRemove *ngIf="removable">x</mat-icon>
                     </mat-chip>
                     <input placeholder="Search Keywords" #keywordInput [formControl]="keywordControl"
                         [matAutocomplete]="auto" [matChipInputFor]="chipList"
-                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (keyup)='onKey($event)'>
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (keyup)='onKey($event)' class="whiteText">
                 </mat-chip-list>
                 <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
                     <mat-option *ngFor="let keyword of filteredKeywords | async" [value]="keyword">
