@@ -142,31 +142,38 @@ export class DataService {
   }
 
   search(keywords: number[] | null, genre: number | undefined, subgenre: number | undefined, query: string | null = null, rating: Rating | null): Observable<any> {
-    let url = ''
+    let url = '';
+
+    if (genre && subgenre) {
+      url = url + `&with_genre=${genre},${subgenre}`;
+    } else if (!genre && subgenre) {
+      url = url + `&with_genre=${subgenre}`;
+    } else if (genre && !subgenre) {
+      url = url + `&with_genre=${genre}`;
+    } else if (genre === subgenre) {
+      console.log('in genre')
+      url = url + `&with_genre=${genre}`;
+    }//DOESN't WORK, not entering if statement
+
+
+    if (rating && rating.order === 5) {
+      url = url + `&certification_country=US&certification.gte=5`;
+    } else if (rating) {
+      url = url + `&certification_country=US&certification=${rating.certification}`;
+    }//DOESN't WORK, not entering if statement
 
     if (keywords) {
       let keywordString = keywords?.join(',');
-      url = url + `&with_keyword=${keywordString}`
-    }
-
-    if (genre && subgenre) {
-      url = url + `&with_genre=${genre},${subgenre}`
-    } else if (!genre && subgenre) {
-      url = url + `&with_genre=${subgenre}`
-    } else if (genre && !subgenre) {
-      url = url + `&with_genre=${genre}`
-    }
+      url = url + `&with_keyword=${keywordString}`;
+    } //this one works, always done even when not supposed to
 
     if (query) {
+      url = url + `&query=${query}`;
+    }//this one works, done correctly
 
-    }
 
-    if (rating && rating.order === 5) {
-      url = url + `&certification_country=US&certification.gte=5`
-    } else if (rating) {
-      url = url + `&certification_country=US&certification=${rating.certification}`
-    }
-
-    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}`)
+    console.log(url)
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}`);
+    //RETURNS EVERY MOVIE IN DATABASE NOT FILTERED
   }
 }

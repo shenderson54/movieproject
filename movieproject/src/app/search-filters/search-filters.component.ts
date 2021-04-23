@@ -29,6 +29,7 @@ export class SearchFiltersComponent implements OnInit {
   rating: Rating | null = null;
 
 
+
   //for keyword autocomplete and chips
   keywordControl = new FormControl();
   visibile = true;
