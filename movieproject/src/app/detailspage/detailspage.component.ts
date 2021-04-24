@@ -9,13 +9,14 @@ import { TmdbService } from '../tmdb.service';
 })
 export class DetailspageComponent implements OnInit {
 
-  movie : any | null = null;
-  
+  movie : any = "";
 
   constructor(private service: TmdbService) { }
 
   ngOnInit(): void {
     this.service.getMovieById(550).subscribe(movie => this.movie = movie)
+    this.service.getMovieImage("").subscribe(movie => this.movie = movie)
+    console.log(this.movie)
   }
 
 }
