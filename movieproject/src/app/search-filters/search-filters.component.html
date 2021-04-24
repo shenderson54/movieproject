@@ -1,7 +1,7 @@
 <div class="box">
     <input placeholder='Search for movies' [(ngModel)]='query'>
 
-    <button mat-raised-button color="primary" (click)='search()'>Search</button>
+    <button mat-raised-button color="primary" (click)='search()' routerLink='/search/{{searchResults}}'>Search</button>
 </div>
 
 
@@ -61,3 +61,5 @@
 
     </ul>
 </div>
+
+<router-outlet></router-outlet>

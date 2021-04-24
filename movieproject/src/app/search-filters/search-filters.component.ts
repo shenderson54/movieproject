@@ -1,10 +1,10 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, EventEmitter } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { DataService } from '../data.service';
 import { Genre } from './genre';
 import { Rating } from './rating'
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
@@ -26,6 +26,7 @@ export class SearchFiltersComponent implements OnInit {
   filterRating: string | null = null;
   inputValue: string | null = null;
   query: string | null = null;
+  dataSubscribe: Subscription | null = null;
 
 
 
@@ -41,7 +42,7 @@ export class SearchFiltersComponent implements OnInit {
   @ViewChild('keywordInput') keywordInput!: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete!: MatAutocomplete;
 
-
+  @Output() searchResults: EventEmitter<any> = new EventEmitter();
 
   constructor(private data: DataService,
     private http: HttpClient) { }
@@ -51,16 +52,9 @@ export class SearchFiltersComponent implements OnInit {
     this.ratings = this.data.getRatings();
   }
 
-
-  //genres functions
-
-
-
-  // genreSelected(genre: string) {
-  //   this.genres.forEach((value, index) => {
-  //     if (value.name === genre) this.genres.splice(index, 1)
-  //   })
-  // }
+  ngOnDestroy(): void {
+    this.dataSubscribe?.unsubscribe();
+  }
 
 
 
@@ -107,9 +101,13 @@ export class SearchFiltersComponent implements OnInit {
       keywordsArray.push(keyword.id)
     }
 
-    console.log(this.filterGenre)
-
-    this.data.search(keywordsArray, this.filterGenre, this.filterSubgenre, this.query, this.filterRating).subscribe(response => console.log(response));
+    this.dataSubscribe = this.data.search(
+      keywordsArray,
+      this.filterGenre,
+      this.filterSubgenre,
+      this.query,
+      this.filterRating
+    ).subscribe((response: Observable<any>) => { this.searchResults.emit(response) });
   }
 
 
