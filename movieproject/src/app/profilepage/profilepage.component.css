@@ -7,10 +7,10 @@
     align-items: center;
     border: 2px solid black;
     /* background-color: rgb(73, 190, 190); */
-    background: linear-gradient(
-      rgba(25, 25, 25, 0.2),
-      rgba(100, 150, 200, 0.5)
-    );
+    /* background: linear-gradient(
+      rgba(25, 25, 25, 0.2),*/
+      background-image: url(/assets/jacktheripper.jpg);
+    
   }
 
   img {
@@ -42,6 +42,7 @@
     height: 650px;
     color: white;
     box-shadow: silver;
+    background-image: url(/assets/jacktheripper.jpg);
   }
 
   img {
@@ -88,11 +89,8 @@
     height: 800px;
     color: white;
     box-shadow: silver;
-    background: url(/movieproject/src/assets/jacktheripper.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-image: url(/assets/jacktheripper.jpg);
+    
   }
 
   .profile-pic {
@@ -104,8 +102,11 @@
       /* clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); */
       clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
       /* border-radius: 50%; */
-      height: 300px;
-      width: 300px;
+      height: 180px;
+      width: 180px;
+      margin-left: 30px;
+      margin-top: 30px;
+      margin-bottom: 10px;
       overflow: hidden;
       display: flex;
       justify-content: center;
@@ -130,14 +131,14 @@
     width: 75px;
     border-radius: 50%;
     margin-top: 10px;
-    margin-left: 195px;
+    margin-left: 110px;
     align-items: center;
   }
 
   h3,
   p,
   .recent-views {
-    margin-left: 15px;
+    margin-left: 30px;
   }
 
   .content-outer-container {

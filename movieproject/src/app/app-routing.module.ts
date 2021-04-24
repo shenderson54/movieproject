@@ -10,8 +10,9 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: '', component: SplashscreenComponent },
   { path: 'profile', component: ProfilepageComponent },
-  { path: 'details/:id', component: DetailspageComponent },
-  
+
+  { path: 'details', component: DetailspageComponent },
+
 
 
 ];

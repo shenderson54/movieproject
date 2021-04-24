@@ -1,6 +1,12 @@
-<p>search works!</p>
+<app-search-filters (searchResults)='setResults($event)'></app-search-filters>
 
 
-<!-- <app-nav-bar></app-nav-bar> -->
+<div>
+    <ul>
+        <li *ngFor=' let result of results' routerLink='/details/{{result.id}}'>
+            <img src="https://image.tmdb.org/t/p/w154{{result.backdrop_path}}">
+            {{result.title}} {{result.release_date}} {{result.overview}}
+        </li>
 
-<!-- <app-search-filters></app-search-filters> -->
+    </ul>
+</div>
