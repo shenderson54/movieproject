@@ -23,7 +23,12 @@ export class SearchComponent implements OnInit {
 
   setResults(searchResults: any) {
     this.results = searchResults.results;
-    this.totalPages = searchResults.length;
+    console.log(searchResults)
+    this.totalPages = searchResults.total_results;
   }
 
+
+  changePage(event: number) {
+    this.page = event;
+  }
 }

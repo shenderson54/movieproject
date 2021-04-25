@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, EventEmitter, Output, OnDestroy, OnChanges } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { DataService } from '../data.service';
 import { Genre } from './genre';
@@ -10,6 +10,7 @@ import { FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipInputEvent, MatChipsModule } from '@angular/material/chips';
 import { Keyword } from './keyword';
+import { SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { Keyword } from './keyword';
   templateUrl: './search-filters.component.html',
   styleUrls: ['./search-filters.component.css']
 })
-export class SearchFiltersComponent implements OnInit {
+export class SearchFiltersComponent implements OnInit, OnDestroy, OnChanges {
 
   genres: Genre[] = [];
   ratings: Rating[] = [];
@@ -42,6 +43,7 @@ export class SearchFiltersComponent implements OnInit {
   @ViewChild('keywordInput') keywordInput!: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete!: MatAutocomplete;
 
+  @Input() page: number = 1;
   @Output() searchResults: EventEmitter<any> = new EventEmitter();
 
   constructor(private data: DataService,
@@ -56,6 +58,10 @@ export class SearchFiltersComponent implements OnInit {
     this.dataSubscribe?.unsubscribe();
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    this.page = changes.page.currentValue;
+    this.search();
+  }
 
 
 
@@ -106,7 +112,8 @@ export class SearchFiltersComponent implements OnInit {
       this.filterGenre,
       this.filterSubgenre,
       this.query,
-      this.filterRating
+      this.filterRating,
+      this.page
     ).subscribe((response: Observable<any>) => { this.searchResults.emit(response) });
   }
 

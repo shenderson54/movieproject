@@ -1,14 +1,14 @@
-<app-search-filters (searchResults)='setResults($event)'></app-search-filters>
+<app-search-filters (searchResults)='setResults($event)' [page]='page'></app-search-filters>
 
 
 <div>
     <ul>
-        <li *ngFor=' let result of results | paginate:{itemsPerPage: 10, currentPage: page, totalItems: totalPages }'
+        <li *ngFor=' let result of results | paginate:{itemsPerPage: 20, currentPage: page, totalItems: totalPages }'
             routerLink='/details/{{result.id}}'>
             <img src="https://image.tmdb.org/t/p/w154{{result.backdrop_path}}">
 
             {{result.title}} {{result.release_date}} {{result.overview}}
         </li>
     </ul>
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    <pagination-controls (pageChange)="changePage($event)"></pagination-controls>
 </div>
