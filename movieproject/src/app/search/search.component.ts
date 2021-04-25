@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
 import { Result } from './result';
 import { SearchPage } from './search-page';
@@ -11,19 +10,10 @@ import { SearchPage } from './search-page';
 })
 export class SearchComponent implements OnInit {
 
-  pagesArray: Array<number> = [];
-  currentPage: number = 1;
+  totalPages: any;
+  page: number = 1;
   results: Result[] = [];
 
-
-  @Input() set setPagination(pagination: SearchPage) {
-    if (pagination) {
-      const pagesAmount = Math.ceil(
-        pagination.itemsCount / pagination.pageSize
-      );
-      this.pagesArray = new Array(pagesAmount).fill(1);
-    }
-  }
 
   constructor(private data: DataService) { }
 
@@ -33,6 +23,7 @@ export class SearchComponent implements OnInit {
 
   setResults(searchResults: any) {
     this.results = searchResults.results;
+    this.totalPages = searchResults.length;
   }
 
 }

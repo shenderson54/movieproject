@@ -3,10 +3,12 @@
 
 <div>
     <ul>
-        <li *ngFor=' let result of results' routerLink='/details/{{result.id}}'>
+        <li *ngFor=' let result of results | paginate:{itemsPerPage: 10, currentPage: page, totalItems: totalPages }'
+            routerLink='/details/{{result.id}}'>
             <img src="https://image.tmdb.org/t/p/w154{{result.backdrop_path}}">
+
             {{result.title}} {{result.release_date}} {{result.overview}}
         </li>
-
     </ul>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
