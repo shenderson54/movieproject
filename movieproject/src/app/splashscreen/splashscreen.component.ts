@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-splashscreen',
@@ -7,20 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SplashscreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data: DataService) {
+    console.log('constructor');
+  }
 
   ngOnInit(): void {
-  }
-  images = [
-     { path: '/assets/thebreakfastclub.jpg' },
-     { path: '/assets/hackers.jpg' },
-     { path: '/assets/themonkeyking.jpg' },
-     { path: '/assets/sinister.jpg' },
-     { path: '/assets/radioactive.jpg' },   
-     { path: '/assets/matrixcat.jpg' },
-     { path: '/assets/theshining.jpg' },
-     { path: '/assets/AvatarExample.jpg' }
+    console.log('oninit');
+    this.data.getPopularMovies().subscribe(movies => {
+      console.log('loaded');
+      this.images = movies.map((movie: any) => ({
+             path: `https://image.tmdb.org/t/p/w154${movie.poster_path}`}))})
 
+  }
+  images: any[] = [
+     
   ]
   arrowsOutside = true
   

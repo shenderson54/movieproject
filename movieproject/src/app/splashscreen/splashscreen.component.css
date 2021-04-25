@@ -59,43 +59,43 @@ main {
   color:rgba(246, 220, 207, 0.712);
 }
 
-carousel {
+/* carousel {
   background: linear-gradient(#e66465, #9198e5);
   height: 250px;
   /* // Carousel height */
-  border: 2px solid white;
+  /* border: 2px solid white; */
   /* I am using the border to outline my box to make styling a little easier will remove once I'm finished */
-  width: 650px;
+  /* width: 650px; */
   /* // Carousel Width */
 
-  min-width: 200;
+  /* min-width: 200; */
   /* // Cell width */
 
-  -ms-overflow-style: 3;
+  /* -ms-overflow-style: 3; */
   /* // The number of carousel cells that will be stored for in the DOM tree outside the scope. */
 
-  margin: 1px;
+  /* margin: 1px; */
   /* // Cell spacing */
 
-  -webkit-appearance: 50;
+  /* -webkit-appearance: 50; */
   /* // Minimum distance for swipe */
 
-  transition-duration: number=200;
+  /* transition-duration: number=200; */
   /* // Animation duration */
 
-  transition-timing-function: "ease" "ease-in" "ease-out" "ease-in-out" "linear"
-    = "ease";
+  /* transition-timing-function: "ease" "ease-in" "ease-out" "ease-in-out" "linear" */
+    /* = "ease"; */
   /* // Smooth animation function */
 
-  content: boolean=false;
+  /* content: boolean=false; */
   /*// Counter */
 
-    counter-increment: string=" / "; 
+    /* counter-increment: string=" / ";  */
     /*Counter separator*/
 
-  border-radius: 1em;
+  /* border-radius: 1em; */
   /*Border radius for carousel cells*/
-}
+/* } */ 
 
 .pics {
   padding-left: 12px;

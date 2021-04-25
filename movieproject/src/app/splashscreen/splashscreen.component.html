@@ -1,11 +1,14 @@
 <main class="splashScreen">
   <div class="box">
     <img src="/assets/pageBackgroundImg.jpg" id="bg" alt="" />
-    <app-search-filters></app-search-filters>
+    <app-search-bar routerLink='/search'></app-search-bar>
   </div>
 </main>
 <h2 class='carouselTitle'><span class="carouselTitleColor">Trending</span></h2>
-<carousel class="pics" [images]="images" [arrowsOutside]="arrowsOutside">
+<carousel class="pics"  [arrowsOutside]="arrowsOutside">
+  <div class="carousel-cell" *ngFor="let image of images">
+    <img src="{{image.path}}">
+  </div>
 </carousel>
 
 <div class="content-outer-container">

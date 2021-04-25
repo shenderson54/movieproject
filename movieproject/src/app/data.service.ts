@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Movieconfig } from './movieconfig';
 import { Genre } from './search-filters/genre';
 import { Keyword } from './search-filters/keyword';
@@ -176,4 +177,11 @@ export class DataService {
     return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}`);
 
   }
+  getPopularMovies() {
+    return this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=f94ce2edb07147fae6c5fe3d18acad2a`).pipe(map((response: any) => {
+      console.log('loading in data');
+      return response.results
+    }));
+  } 
 }
+
