@@ -8,7 +8,7 @@
 <div class="searchFilters">
     <ul>
         <li class="margin">
-            <label for="filterGenre" class="genreLabel">Genre</label>
+            <label for="filterGenre" class="genreLabel"></label>
             <select name="filterGenre" [(ngModel)]='filterGenre' class="selectSize">
                 <option [ngValue]="null">Choose a Genre</option>
                 <option *ngFor='let genre of genres' value='{{genre.id}}'>
@@ -19,7 +19,7 @@
         </li>
 
         <li class="margin">
-            <label for="filterSubgenre" class="subgenreLabel">Subgenre</label>
+            <label for="filterSubgenre" class="subgenreLabel"></label>
             <select name="filterSubgenre" [(ngModel)]='filterSubgenre' class="selectSize">
                 <option [ngValue]="null">Choose a Subgenre</option>
                 <option *ngFor='let genre of genres' value='{{genre.id}}'>
@@ -29,7 +29,7 @@
         </li>
 
         <li class="margin">
-            <label for="filterRating" class="ratingLabel">Rating</label>
+            <label for="filterRating" class="ratingLabel"></label>
             <select name="filterRating" [(ngModel)]='filterRating' class="selectSize">
                 <option [ngValue]='null'>Choose a Rating</option>
                 <option *ngFor='let rating of ratings' value='{{rating.certification}}'>{{rating.certification}}

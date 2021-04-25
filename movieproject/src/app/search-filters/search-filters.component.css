@@ -3,21 +3,32 @@
     padding:0px;
 }
 
-.searchFilters{
+.box {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    height: 50%;
-
 }
 
+.searchFilters{
+    display: flex;
+     align-items: flex-end; 
+    justify-content: center; 
+    height: 50%;
+    
+
+}
+ 
+ul{
+    height: 100px;
+}
 
 li{
     list-style-type: none;
+    padding: 5px;
+
 }
 
 .margin{
     margin: 10px;
+
 }
 
 .example-chip-list{
@@ -36,3 +47,4 @@ label{
 .whiteText{
     color: white;
 }
+

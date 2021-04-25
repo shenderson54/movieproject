@@ -31,4 +31,5 @@ export class SearchComponent implements OnInit {
   changePage(event: number) {
     this.page = event;
   }
+
 }
