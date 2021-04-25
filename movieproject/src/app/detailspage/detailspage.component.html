@@ -1,17 +1,14 @@
-<a class="menu-back" href="#"> < Back To Movie Selection</a>
-<app-search-bar></app-search-bar> 
+<a class="menu-back" href="/search">Back To Movie Selection</a>
+<app-search-bar></app-search-bar>
 <div id="info-box">
-    <img class="movieImage" 
-    [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path"
-        [alt]="movie.title"
-    />
+    <img class="movieImage" [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" [alt]="movie.title" />
     <div class="movieInfo">
-    <h2>{{ movie.title }}<span>Released: {{ movie.release_date }}, {{ movie.runtime }} minutes</span></h2>
-    <button>+Add To Favorites</button>
-    <h3>Summary:</h3>
+        <h2>{{ movie.title }}<span>Released: {{ movie.release_date }}, {{ movie.runtime }} minutes</span></h2>
+        <button>+Add To Favorites</button>
+        <h3>Summary:</h3>
 
-    <p id="overview">
-        {{ movie.overview }}
-    </p>
+        <p id="overview">
+            {{ movie.overview }}
+        </p>
     </div>
-</div> 
+</div>

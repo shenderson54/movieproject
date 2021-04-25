@@ -142,7 +142,16 @@ export class DataService {
     return this.ratings;
   }
 
-  search(keywords: number[], genre: number | null, subgenre: number | null, query: string | null = null, rating: string | null): Observable<any> {
+
+  search(
+    keywords: number[],
+    genre: number | null,
+    subgenre: number | null,
+    query: string | null = null,
+    rating: string | null,
+    page: number = 1
+  ): Observable<any> {
+
     let url = '';
 
 
@@ -157,9 +166,8 @@ export class DataService {
     }
 
 
-    console.log(rating)
     if (rating && rating === 'NC-17') {
-      url = url + `&certification_country=US&certification.gte=5`;
+      url = url + `&certification_country=US&certification.gte=${rating}`;
     } else if (rating) {
       url = url + `&certification_country=US&certification=${rating}`;
     }
@@ -169,12 +177,13 @@ export class DataService {
       url = url + `&with_keywords=${keywordString}`;
     }
 
+
     console.log(url)
     if (query) {
       url = url + `&query=${query}`;
-      return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}`);
+      return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}&page=${page}`);
     }
-    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}`);
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a${url}&page=${page}`);
 
   }
   getPopularMovies() {
