@@ -1,13 +1,3 @@
-body {
-  display: flex;
-}
-
-app-search-filters {
-  display: flex;
-  height: 30px;
-  margin-top: -215px;
-  margin-left: 200px;
-}
 .content-outer-container {
   min-height: 100%;
 }
@@ -33,76 +23,64 @@ app-search-filters {
   font-size: 20px;
 }
 
-main {
-  display: flex;
-  justify-content: center;
-  padding-right: 125px;
-}
-
 .box {
-  width: 950px;
-  height: 550px;
-  /* border: 1px black solid;   ←←← used for tracking purposes  commented out once  the bg img was implemented*/
+  height: calc(100% - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, .93), rgba(0, 0, 0, .77)),
+    url(../../assets/background2.jpg);
 }
 
-#bg {
-  width: 950px;
-  height: 550px;
+input {
+  margin: 10px;
+  /* position: absolute; */
+  top: 380px;
+  left: 650px;
+  width: 450px;
+  height: 30px;
+  border-radius: 10em;
 }
 
-.carouselTitle {
-  padding-left: 470px;
-  padding-top: 55px;
+.search {
+  margin-bottom: 60px;
 }
 
-.carouselTitleColor {
-  color:rgba(246, 220, 207, 0.712);
-}
-
-/* carousel {
-  background: linear-gradient(#e66465, #9198e5);
+carousel {
+  /* background: linear-gradient(#e66465, #9198e5); */
   height: 250px;
   /* // Carousel height */
-  /* border: 2px solid white; */
-  /* I am using the border to outline my box to make styling a little easier will remove once I'm finished */
-  /* width: 650px; */
+  width: 630px;
   /* // Carousel Width */
-
-  /* min-width: 200; */
+  min-width: 200;
   /* // Cell width */
-
-  /* -ms-overflow-style: 3; */
+  -ms-overflow-style: 3;
   /* // The number of carousel cells that will be stored for in the DOM tree outside the scope. */
-
-  /* margin: 1px; */
+  margin: 10;
   /* // Cell spacing */
-
-  /* -webkit-appearance: 50; */
+  -webkit-appearance: 50;
   /* // Minimum distance for swipe */
-
-  /* transition-duration: number=200; */
+  transition-duration: number=200;
   /* // Animation duration */
-
-  /* transition-timing-function: "ease" "ease-in" "ease-out" "ease-in-out" "linear" */
-    /* = "ease"; */
+  transition-timing-function: 'ease''ease-in''ease-out''ease-in-out''linear'='ease';
+  /* transition-timing-function: 'ease'| 'ease-in'| 'ease-out'| 'ease-in-out'| 'linear'='ease'; */
   /* // Smooth animation function */
-
-  /* content: boolean=false; */
-  /*// Counter */
-
-    /* counter-increment: string=" / ";  */
-    /*Counter separator*/
-
-  /* border-radius: 1em; */
-  /*Border radius for carousel cells*/
-/* } */ 
+  content: boolean=false;
+  /* // Counter */
+  counter-increment: string=" / ";
+  /* // Counter separator */
+  border-radius: 3em;
+  /* // Border radius for carousel cells */
+}
 
 .pics {
-  padding-left: 12px;
+  padding-left: 14px;
+  padding-right: 50px;
   width: 45%;
-  position: absolute;
-  top: 50em;
-  left: 33em;
+  /* position: absolute;
+    top: 45em;
+    left: 35em; */
 }
 
 .myName {

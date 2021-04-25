@@ -1,4 +1,16 @@
-<main class="splashScreen">
+    <div class="box">
+      <div class="search">
+        <input placeholder='Search for movies'>
+        <button mat-raised-button color="primary">Search</button>
+      </div>
+      <carousel class="pics" [images]="images" [arrowsOutside]="arrowsOutside">
+      </carousel>
+      <carousel class="pics" [images]="scienceFictionMovies" [arrowsOutside]="arrowsOutside">
+      </carousel>
+    </div>
+
+
+<!-- <main class="splashScreen">
   <div class="box">
     <img src="/assets/pageBackgroundImg.jpg" id="bg" alt="" />
     <app-search-bar routerLink='/search'></app-search-bar>
@@ -22,4 +34,4 @@
     <span class="dansName">Dan</span>...The crime fighting coding trio &copy;
     2021
   </p>
-</div>
+</div> -->

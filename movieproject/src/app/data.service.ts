@@ -13,7 +13,7 @@ import { Rating } from './search-filters/rating';
 export class DataService {
 
   movieDBConfig = this.http.get(`https://api.themoviedb.org/3/configuration?api_key=f94ce2edb07147fae6c5fe3d18acad2a`)
-
+  apiKey = 'f94ce2edb07147fae6c5fe3d18acad2a';
 
   genres: Genre[] = [
     {
@@ -187,10 +187,16 @@ export class DataService {
 
   }
   getPopularMovies() {
-    return this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=f94ce2edb07147fae6c5fe3d18acad2a`).pipe(map((response: any) => {
+    return this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}`).pipe(map((response: any) => {
       console.log('loading in data');
       return response.results
     }));
-  } 
-}
+  }
+  getScienceFiction() {
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?with_genres=878&sort_by=vote_average.desc&api_key=${this.apiKey}`).pipe(map((response: any) => {
+      console.log('loading in data');
+      return response.results
+    }));
+  }
+} 
 
