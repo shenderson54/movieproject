@@ -16,7 +16,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatChipInput, MatChipsModule } from '@angular/material/chips';
-import { SearchBarComponent } from './search-bar/search-bar.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { FilterPipe } from './search/filter.pipe';
@@ -33,7 +32,6 @@ import { FilterPipe } from './search/filter.pipe';
     NavBarComponent,
     SearchFiltersComponent,
     FilterPipe,
-    SearchBarComponent,
 
 
 

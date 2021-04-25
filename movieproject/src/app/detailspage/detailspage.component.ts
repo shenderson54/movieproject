@@ -31,7 +31,7 @@ export class DetailspageComponent implements OnInit {
           if (!id) {
             return of(null)
           }
-          
+          console.log(this.movie)
           return this.service.getMovieById(+id);
           
       }))
