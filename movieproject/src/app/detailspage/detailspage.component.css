@@ -9,23 +9,25 @@ img {
 .menu-back {
     position: absolute;
     right: 1em;
-    top: 7em;
+    top: 5.5em;
+    
 }
 
 .menu-back:link,
 .menu-back:visited {
-    color: black;
+    color: white;
 }
 
  
 #info-box {
-    background-color: rgb(143, 103, 143);
+    background-color: #9151ff6e;
     display: flex;
     padding-top: 1em;
 }
 
 .movieInfo {
     padding: 1em;
+    color: white;
 }
 
 .movieInfo h3 {
@@ -39,9 +41,6 @@ img {
 .movieInfo span {
     font-size: 12px;
     padding-left: 1em;
-    /* position: relative;
-    right: 7.6em;
-    top: 15px; */
 }
 
 .lists {

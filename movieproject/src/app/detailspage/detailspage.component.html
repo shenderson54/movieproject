@@ -1,11 +1,10 @@
 
 <a class="menu-back" routerLink="/search">Back To Movie Selection</a>
-<a class="favorites-link" routerLink="/favorites">Go To Favorites</a>
 <div id="info-box">
     <img class="movieImage" [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" [alt]="movie.title" />
     <div class="movieInfo">
         <h2>{{ movie.title }}<span>Released: {{ movie.release_date }}, {{ movie.runtime }} minutes</span></h2>
-        <button (click)="favoriteMovies(movie)" *ngIf="movieIsAddedToFavorites()">+Add To Favorites</button>
+        <button class="mat-raised-button mat-button-base mat-focus-indicator mat-primary" (click)="favoriteMovies(movie)" *ngIf="movieIsAddedToFavorites()">+Add To Favorites</button>
         <h3>Summary:</h3>
 
         <p id="overview">

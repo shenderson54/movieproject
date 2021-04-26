@@ -1,9 +1,13 @@
 <div class="favorites-card">
     <div *ngFor="let favorite of movieFavorites">
-        <img class="movieImage" [src]="'https://image.tmdb.org/t/p/w500/'+favorite.poster_path" [alt]="favorite.title" />
+        <img class="favoritesImage" [src]="'https://image.tmdb.org/t/p/w500/'+favorite.poster_path" [alt]="favorite.title" />
+        <div class="favoritesInfo">
         <h3>{{ favorite.title }}</h3>
-
-        <button (click)="removeMovieFromFavorites(favorite)">Remove From Favorites</button>
+        <span>Released:{{favorite.release_date }}<br>Runtime: {{ favorite.runtime }} minutes</span>
+        </div>
+        <div class="favoritesButtons">
+        <button (click)="removeMovieFromFavorites(favorite)" class="mat-raised-button mat-button-base mat-focus-indicator mat-primary">Remove From Favorites</button>
         <a routerLink="/details/{{favorite.id}}">View Info</a>
+        </div>
     </div>
 </div>

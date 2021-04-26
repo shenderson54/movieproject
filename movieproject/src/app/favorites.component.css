@@ -1,0 +1,39 @@
+img {
+    width: 200px;
+}
+
+.favoritesInfo {
+    color: white;
+}
+
+.favoritesInfo span {
+    margin-top: 3px;
+}
+
+.favorites-card {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    background-color: #9151ff6e;
+}
+
+.ng-star-inserted {
+    padding: 1em 1em 1.5em 1em;
+}
+
+.favoritesButtons {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.favoritesButtons a {
+    text-align: center;
+    color: white;
+}
+
+.favoritesButtons:link,
+.favoritesButtons:visited {
+    color: white;
+}
