@@ -1,8 +1,8 @@
-.content-outer-container {
+/* .content-outer-container {
   min-height: 100%;
-}
+} */
 
-.content-inner-container {
+/* .content-inner-container {
   padding-bottom: 36px;
 }
 
@@ -10,9 +10,9 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-}
+} */
 
-.footer-container {
+/* .footer-container {
   height: 24px;
   margin-top: -36px;
 }
@@ -21,7 +21,7 @@
   margin: 0 auto;
   text-align: center;
   font-size: 20px;
-}
+} */
 
 .box {
   height: calc(100% - 64px);
@@ -70,11 +70,22 @@ carousel {
   padding-left: 14px;
   padding-right: 50px;
   width: 45%;
-  margin: 15px 0px;
+  margin: 5px 0px;
   /* position: absolute;
     top: 45em;
     left: 35em; */
 }
+
+.popularMovies, .scienceFictionMovies {
+  color: white;
+  padding-right:690px;
+  padding-top: 50px;
+}
+
+.scienceFictionMovies{
+  padding-right: 770px;
+}
+
 
 /* .myName {
   color: Red;
