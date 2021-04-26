@@ -21,6 +21,7 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { FilterPipe } from './search/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -54,6 +55,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     IvyCarouselModule,
     NgxPaginationModule,
+    MatCardModule,
 
 
   ],

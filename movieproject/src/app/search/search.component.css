@@ -1,0 +1,9 @@
+.searchPage {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, .93), rgba(0, 0, 0, .77)),
+    url(../../assets/background2.jpg);
+}

@@ -1,8 +1,8 @@
 <app-search-filters (searchResults)='setResults($event)' [page]='page'></app-search-filters>
 
 
-<div>
-    <ul>
+<div >
+    <ul class="searchPage">
         <li *ngFor=' let result of results | paginate:{itemsPerPage: 20, currentPage: page, totalItems: totalPages }'
             routerLink='/details/{{result.id}}'>
             <img src="https://image.tmdb.org/t/p/w154{{result.backdrop_path}}">

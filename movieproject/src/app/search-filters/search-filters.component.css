@@ -3,31 +3,37 @@
     padding:0px;
 }
 
-.box {
-    display: flex;
-}
+
 
 .searchFilters{
-    display: flex;
-     align-items: flex-end; 
-    justify-content: center; 
-    height: 50%;
-    
+    margin-bottom: 40px;
+    height:.01px;
 
-}
- 
+} 
+
 ul{
     height: 100px;
+    display: flex;
 }
 
 li{
+    display: flex; 
+    flex-direction: row;
+    align-items:baseline;
+    justify-content: center;
+    height: 1px;
+    background-color: transparent;
+    color:transparent;
     list-style-type: none;
-    padding: 5px;
+    /* padding: 5px; */
+    
 
 }
 
 .margin{
-    margin: 10px;
+    margin-left: 110px;
+    
+
 
 }
 
