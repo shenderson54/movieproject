@@ -8,7 +8,7 @@ import { FavoritesComponent } from './favorites.component';
 
 const routes: Routes = [
   { path: 'search', component: SearchComponent },
-  { path: 'home', component: SplashscreenComponent },
+  { path: '', component: SplashscreenComponent },
   { path: 'profile', component: ProfilepageComponent },
   { path: 'details/:id', component: DetailspageComponent },
   { path: 'favorites', component: FavoritesComponent}

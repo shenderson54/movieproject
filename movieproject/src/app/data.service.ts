@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Movieconfig } from './movieconfig';
+// import { Movieconfig } from './movieconfig';
 import { Genre } from './search-filters/genre';
-import { Keyword } from './search-filters/keyword';
+// import { Keyword } from './search-filters/keyword';
 import { Rating } from './search-filters/rating';
 
 @Injectable({
@@ -208,5 +208,12 @@ export class DataService {
     return this.http.get(`https://image.tmdb.org/t/p/w500/${imagePath}`)
   }
 
+  getScienceFictionMovie(searchTerm: string | null = null) {
+    return this.http.get(`https://api.themoviedb.org/3/discover/movie?api_key=f94ce2edb07147fae6c5fe3d18acad2a&with_genres=878&sort_by=vote_average.desc`).pipe(map((response: any) => {
+      console.log('loading in data');
+      return response.results
+    }));
+  
+  }
 }
 
