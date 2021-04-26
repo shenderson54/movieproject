@@ -22,6 +22,8 @@ import { SearchFiltersComponent } from './search-filters/search-filters.componen
 import { FilterPipe } from './search/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -41,7 +43,6 @@ import { MatCardModule } from '@angular/material/card';
 
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -56,6 +57,8 @@ import { MatCardModule } from '@angular/material/card';
     IvyCarouselModule,
     NgxPaginationModule,
     MatCardModule,
+    MatSelectModule,
+    MatInputModule,
 
 
   ],
