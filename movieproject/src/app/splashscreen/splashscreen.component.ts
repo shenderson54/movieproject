@@ -31,6 +31,15 @@ export class SplashscreenComponent implements OnInit {
         path: `https://image.tmdb.org/t/p/w154${movie.poster_path}`
       }))
     })
+
+    this.data.().subscribe(movies => {
+      // console.log('loaded');
+      this.horror = movies.map((movie: any) => ({
+        path: `https://image.tmdb.org/t/p/w154${movie.poster_path}`
+      }))
+    })
+
+    
     
 
   }
