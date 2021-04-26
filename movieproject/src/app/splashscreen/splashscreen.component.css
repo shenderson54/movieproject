@@ -33,19 +33,11 @@
     url(../../assets/background2.jpg);
 }
 
-input {
-  margin: 10px;
-  /* position: absolute; */
-  top: 380px;
-  left: 650px;
-  width: 450px;
-  height: 30px;
-  border-radius: 10em;
+input{
+  display: none;
 }
 
-.search {
-  margin-bottom: 60px;
-}
+
 
 carousel {
   /* background: linear-gradient(#e66465, #9198e5); */

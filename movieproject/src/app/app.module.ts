@@ -21,6 +21,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { FilterPipe } from './search/filter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -40,7 +43,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -54,6 +56,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     IvyCarouselModule,
     NgxPaginationModule,
+    MatCardModule,
+    MatSelectModule,
+    MatInputModule,
 
 
   ],
