@@ -6,6 +6,7 @@
         "movieconfig",
         "movieproject",
         "oninit",
+        "preconnect",
         "profilepage",
         "theshining",
         "titlebar"
