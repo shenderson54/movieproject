@@ -1,65 +1,65 @@
 <div class="box">
-    <input placeholder='Search for movies' [(ngModel)]='query'>
+    <mat-card>
+      <div class="searchFilters">
+          <mat-form-field class="example-full-width">
+            <mat-label>Search for Movies</mat-label>
+            <input matInput placeholder="Ex. Army of Darkness" [(ngModel)]='query'>
+          </mat-form-field>
 
-    <button mat-raised-button color="primary" (click)='search()'>Search</button>
-</div>
+<mat-form-field appearance="fill">
+  <mat-label>Genre</mat-label>
+  <mat-select [(ngModel)]='filterGenre'>
+    <mat-option *ngFor="let genre of genres" [value]="genre.id">
+      {{genre.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
+<mat-form-field appearance="fill">
+  <mat-label>Subgenre</mat-label>
+  <mat-select [(ngModel)]='filterSubgenre'>
+    <mat-option *ngFor="let genre of genres" [value]="genre.id">
+      {{genre.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+        
+        
+        <mat-form-field appearance="fill">
+          <mat-label>Rating</mat-label>
+          <mat-select [(ngModel)]='filterRating'>
+            <mat-option *ngFor="let rating of ratings" [value]="rating.certification">
+              {{rating.certification}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
-<div class="searchFilters">
-    <ul>
-        <li class="margin">
-            <label for="filterGenre" class="genreLabel"></label>
-            <select name="filterGenre" [(ngModel)]='filterGenre' class="selectSize">
-                <option [ngValue]="null">Choose a Genre</option>
-                <option *ngFor='let genre of genres' value='{{genre.id}}'>
-                    <span>{{genre.name}}</span>
-                </option>
-            </select>
-
-        </li>
-
-        <li class="margin">
-            <label for="filterSubgenre" class="subgenreLabel"></label>
-            <select name="filterSubgenre" [(ngModel)]='filterSubgenre' class="selectSize">
-                <option [ngValue]="null">Choose a Subgenre</option>
-                <option *ngFor='let genre of genres' value='{{genre.id}}'>
-                    <span>{{genre.name}}</span>
-                </option>
-            </select>
-        </li>
-
-        <li class="margin">
-            <label for="filterRating" class="ratingLabel"></label>
-            <select name="filterRating" [(ngModel)]='filterRating' class="selectSize">
-                <option [ngValue]='null'>Choose a Rating</option>
-                <option *ngFor='let rating of ratings' value='{{rating.certification}}'>{{rating.certification}}
-                </option>
-            </select>
-        </li>
 
         <div class="keywordDiv">
-            <mat-form-field class="example-chip-list">
-                <mat-label>Added Keywords</mat-label>
-                <mat-chip-list #chipList aria-label="Keyword selection">
-                    <mat-chip *ngFor="let keyword of keywords; index as i" [selectable]="selectable"
-                        [removable]="removable" (removed)="remove(i)" class="chipColor">
-                        {{keyword.name}}
-                        <mat-icon matChipRemove *ngIf="removable">x</mat-icon>
-                    </mat-chip>
-                    <input placeholder="Search Keywords" #keywordInput [formControl]="keywordControl"
-                        [matAutocomplete]="auto" [matChipInputFor]="chipList"
-                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (keyup)='onKey($event)' class="whiteText">
-                </mat-chip-list>
-                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-                    <mat-option *ngFor="let keyword of filteredKeywords | async" [value]="keyword">
-                        {{keyword.name}}
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field>
+          <mat-form-field class="example-chip-list">
+            <mat-label>Added Keywords</mat-label>
+            <mat-chip-list #chipList aria-label="Keyword selection">
+              <mat-chip *ngFor="let keyword of keywords; index as i" [selectable]="selectable" [removable]="removable"
+                (removed)="remove(i)" class="chipColor">
+                {{keyword.name}}
+                <mat-icon matChipRemove *ngIf="removable">x</mat-icon>
+              </mat-chip>
+              <input placeholder="Search Keywords" #keywordInput [formControl]="keywordControl" [matAutocomplete]="auto"
+                [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (keyup)='onKey($event)' class="whiteText">
+            </mat-chip-list>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+              <mat-option *ngFor="let keyword of filteredKeywords | async" [value]="keyword">
+                {{keyword.name}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
         </div>
 
-
-    </ul>
+ <button mat-raised-button color="primary" (click)='search()'>Search</button>
+      </div>
+    </mat-card>
 </div>
 
-<router-outlet></router-outlet>
+
+

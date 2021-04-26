@@ -1,0 +1,20 @@
+.box {
+  padding: 15px;
+}
+
+h3 {
+  font-weight: bolder;
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1.25em;
+}
+ ul {
+   list-style-type: none;
+ }
+
+ li {
+   border-bottom: 2px solid black;
+   margin-bottom: 10px;
+ }

@@ -1,0 +1,25 @@
+#search-items {
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    width: 25em;
+     
+}
+
+@media screen and (max-width: 768px) {
+    .search-bar {
+        width: 20em;
+    }
+}
+
+.box {
+  height: calc(100% - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, .93), rgba(0, 0, 0, .77)),
+    url(../../assets/background2.jpg);
+}

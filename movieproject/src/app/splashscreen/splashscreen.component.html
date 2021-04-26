@@ -1,15 +1,10 @@
-<main class="splashScreen">
-  <div class="box">
-    <img src="/assets/pageBackgroundImg.jpg" id="bg" alt="" />
-    <app-search-bar routerLink='/search'></app-search-bar>
-  </div>
-</main>
-<h2 class='carouselTitle'><span class="carouselTitleColor">Trending</span></h2>
-<carousel class="pics"  [arrowsOutside]="arrowsOutside">
-  <div class="carousel-cell" *ngFor="let image of images">
-    <img src="{{image.path}}">
-  </div>
-</carousel>
+    <div class="box">
+      <carousel class="pics" [images]="images" [arrowsOutside]="arrowsOutside">
+      </carousel>
+      <carousel class="pics" [images]="scienceFictionMovies" [arrowsOutside]="arrowsOutside">
+      </carousel>
+    </div>
+
 
 <div class="content-outer-container">
   <div class="content-inner-container">
@@ -22,4 +17,4 @@
     <span class="dansName">Dan</span>...The crime fighting coding trio &copy;
     2021
   </p>
-</div>
+</div> 

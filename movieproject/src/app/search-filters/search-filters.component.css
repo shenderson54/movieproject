@@ -1,50 +1,9 @@
-*{
-    margin:0px;
-    padding:0px;
-}
-
 .box {
+    padding:15px;
+}
+
+.searchFilters {
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
-
-.searchFilters{
-    display: flex;
-     align-items: flex-end; 
-    justify-content: center; 
-    height: 50%;
-    
-
-}
- 
-ul{
-    height: 100px;
-}
-
-li{
-    list-style-type: none;
-    padding: 5px;
-
-}
-
-.margin{
-    margin: 10px;
-
-}
-
-.example-chip-list{
-    width: 100%;
-}
-
-.selectSize{
-    height: 25px;
-    width: 100%;
-}
-
-label{
-    color: white;
-}
-
-.whiteText{
-    color: white;
-}
-

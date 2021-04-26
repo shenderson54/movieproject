@@ -14,7 +14,7 @@ export class DataService {
 
   movieDBConfig = this.http.get(`https://api.themoviedb.org/3/configuration?api_key=f94ce2edb07147fae6c5fe3d18acad2a`)
 
-  movieFavorites: any = [];
+  movieFavorites: any[] = [];
 
   genres: Genre[] = [
     {

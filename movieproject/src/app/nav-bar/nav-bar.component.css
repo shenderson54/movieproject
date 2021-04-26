@@ -14,10 +14,50 @@ ul {
     margin-left: 100px;
 }
 
+input {
+  margin: 10px;
+  /* position: absolute; */
+  top: 380px;
+  left: 650px;
+  width: 450px;
+  height: 30px;
+  border-radius: 10em;
+  text-align: center;
+}
+
+.mat-raised-button {
+  background: white;
+  border-radius: 10em;
+  color: purple;
+  text-align: center;
+  width: 175px;
+}
+
 li{
     padding: 15px;
 }
 
 a {
     text-decoration: none;
+    color: white;
+}
+ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  list-style-type: none;
+}
+
+li {
+  padding: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+mat-toolbar img {
+  max-width: 48px;
 }
