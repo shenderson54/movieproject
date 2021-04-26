@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription, of} from 'rxjs';
+import { Subscription, of, from} from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { TmdbService } from '../tmdb.service';
+import { DataService } from '../data.service'
 
 
 @Component({
@@ -15,11 +15,8 @@ export class DetailspageComponent implements OnInit {
   movie : any = "";
   subscription$: Subscription | null = null;
 
-  // routeSub: Subscription;
-
-  constructor(private service: TmdbService, private route: ActivatedRoute
+  constructor(private service: DataService, private route: ActivatedRoute
     ) { 
-    // this.routeSub: Subscription;
   }
 
   ngOnInit(): void {
@@ -31,13 +28,12 @@ export class DetailspageComponent implements OnInit {
           if (!id) {
             return of(null)
           }
-          
+          console.log(this.movie)
           return this.service.getMovieById(+id);
           
       }))
         .subscribe(movie => this.movie = movie);
-  
-  
+    
   }
 
   ngOnDestroy() {
@@ -45,8 +41,18 @@ export class DetailspageComponent implements OnInit {
       this.subscription$.unsubscribe();
 
     }
+  }
 
-    // this.routeSub.unsubscribe();
+  favoriteMovies(movie: any) {
+    if(!this.service.movieFavorites.some((favorite: any) => favorite.id === movie.id)) {
+      this.service.movieFavorites.push(this.movie)
+    }
+    
+    console.log(this.service.movieFavorites)
+  }
+
+  movieIsAddedToFavorites() {
+    return !this.service.movieFavorites.some((favorite: any) => favorite.id === this.movie.id)
   }
 
 }

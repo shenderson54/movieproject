@@ -1,9 +1,11 @@
-<a class="menu-back" href="/search">Back To Movie Selection</a>
+
+<a class="menu-back" routerLink="/search">Back To Movie Selection</a>
+<a class="favorites-link" routerLink="/favorites">Go To Favorites</a>
 <div id="info-box">
     <img class="movieImage" [src]="'https://image.tmdb.org/t/p/w500/'+movie.poster_path" [alt]="movie.title" />
     <div class="movieInfo">
         <h2>{{ movie.title }}<span>Released: {{ movie.release_date }}, {{ movie.runtime }} minutes</span></h2>
-        <button>+Add To Favorites</button>
+        <button (click)="favoriteMovies(movie)" *ngIf="movieIsAddedToFavorites()">+Add To Favorites</button>
         <h3>Summary:</h3>
 
         <p id="overview">
@@ -11,3 +13,10 @@
         </p>
     </div>
 </div>
+
+<!--on the data service, add a favorites array.
+an add favorite button on the details page
+when you click it, call the data service and add the movie to the favorites array
+in ngOnInit, you will need to check if the movie you just loaded is in that favorites array, so you can set the initial state
+add a /favorites page
+in that page ngOnInit, load the data service favorites array  -->

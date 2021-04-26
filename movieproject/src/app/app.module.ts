@@ -16,10 +16,10 @@ import { HttpClientModule } from '@angular/common/http'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatAutocompleteModule } from '@angular/material/autocomplete'
 import { MatChipInput, MatChipsModule } from '@angular/material/chips';
-import { SearchBarComponent } from './search-bar/search-bar.component';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { FilterPipe } from './search/filter.pipe';
+import { FavoritesComponent } from './favorites.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
@@ -37,7 +37,7 @@ import { MatInputModule } from '@angular/material/input';
     NavBarComponent,
     SearchFiltersComponent,
     FilterPipe,
-    SearchBarComponent,
+    FavoritesComponent
 
 
 
