@@ -14,6 +14,7 @@ export class DataService {
 
   movieDBConfig = this.http.get(`https://api.themoviedb.org/3/configuration?api_key=f94ce2edb07147fae6c5fe3d18acad2a`)
 
+  movieFavorites: any = [];
 
   genres: Genre[] = [
     {
@@ -192,5 +193,20 @@ export class DataService {
       return response.results
     }));
   } 
+
+  searchMovies(searchTerm: string | null) {
+    return this.http.get(`https://api.themoviedb.org/3/search/movie/?api_key=f94ce2edb07147fae6c5fe3d18acad2a&query=${searchTerm}`)
+  }
+
+  getMovieById(id: number | null) {
+    console.log(id)
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=f94ce2edb07147fae6c5fe3d18acad2a`)
+
+  }
+
+  getMovieImage(imagePath: string | null) {
+    return this.http.get(`https://image.tmdb.org/t/p/w500/${imagePath}`)
+  }
+
 }
 
