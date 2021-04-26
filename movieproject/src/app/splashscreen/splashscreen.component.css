@@ -1,113 +1,118 @@
+body {
+  display: flex;
+}
 
+app-search-filters {
+  display: flex;
+  height: 30px;
+  margin-top: -215px;
+  margin-left: 200px;
+}
 .content-outer-container {
-    min-height: 100%;
+  min-height: 100%;
 }
 
 .content-inner-container {
-    padding-bottom: 36px;
+  padding-bottom: 36px;
 }
 
 .centered {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .footer-container {
-    height: 24px;
-    margin-top: -36px;
+  height: 24px;
+  margin-top: -36px;
 }
 
 .footer-content {
-    margin: 0 auto;
-    text-align: center;
-    font-size: 20px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    padding-right: 125px;
+  display: flex;
+  justify-content: center;
+  padding-right: 125px;
 }
 
 .box {
-    width: 950px;
-    height: 550px;
-    /* border: 1px black solid;   ←←← used for tracking purposes  commented out once  the bg img was implemented*/
+  width: 950px;
+  height: 550px;
+  /* border: 1px black solid;   ←←← used for tracking purposes  commented out once  the bg img was implemented*/
 }
-
 
 #bg {
-    width: 950px;
-    height: 550px;
-
+  width: 950px;
+  height: 550px;
 }
 
-
-carousel {
-    /* background: linear-gradient(#e66465, #9198e5); */
-    height: 250px;
-    /* // Carousel height */
-    border:2px solid white;
-    /* I am using the border to outline my box to make styling a little easier will remove once I'm finished */
-    width: 650px;
-     /* // Carousel Width */
-
-    min-width: 200;
-     /* // Cell width */
-
-    -ms-overflow-style: 3;
-     /* // The number of carousel cells that will be stored for in the DOM tree outside the scope. */
-
-    margin: 1px;
-     /* // Cell spacing */
-
-    -webkit-appearance: 50;
-     /* // Minimum distance for swipe */
-
-    transition-duration: number=200;
-     /* // Animation duration */
-
-    transition-timing-function: 'ease' 'ease-in' 'ease-out' 'ease-in-out' 'linear'='ease';
-    /* // Smooth animation function */
-
-    content: boolean=false ;
-    /* // Counter */
-
-    counter-increment: string=" / ";
-    /* // Counter separator */
-
-    border-radius: 1em ;
-    /* // Border radius for carousel cells */
-
-    
-    
-    
+.carouselTitle {
+  padding-left: 470px;
+  padding-top: 55px;
 }
+
+.carouselTitleColor {
+  color:rgba(246, 220, 207, 0.712);
+}
+
+/* carousel {
+  background: linear-gradient(#e66465, #9198e5);
+  height: 250px;
+  /* // Carousel height */
+  /* border: 2px solid white; */
+  /* I am using the border to outline my box to make styling a little easier will remove once I'm finished */
+  /* width: 650px; */
+  /* // Carousel Width */
+
+  /* min-width: 200; */
+  /* // Cell width */
+
+  /* -ms-overflow-style: 3; */
+  /* // The number of carousel cells that will be stored for in the DOM tree outside the scope. */
+
+  /* margin: 1px; */
+  /* // Cell spacing */
+
+  /* -webkit-appearance: 50; */
+  /* // Minimum distance for swipe */
+
+  /* transition-duration: number=200; */
+  /* // Animation duration */
+
+  /* transition-timing-function: "ease" "ease-in" "ease-out" "ease-in-out" "linear" */
+    /* = "ease"; */
+  /* // Smooth animation function */
+
+  /* content: boolean=false; */
+  /*// Counter */
+
+    /* counter-increment: string=" / ";  */
+    /*Counter separator*/
+
+  /* border-radius: 1em; */
+  /*Border radius for carousel cells*/
+/* } */ 
 
 .pics {
-     padding-left: 12px; 
-    width: 45%;
-    position: absolute;
-    top: 45em;
-    left: 35em;
-    
+  padding-left: 12px;
+  width: 45%;
+  position: absolute;
+  top: 50em;
+  left: 33em;
 }
 
 .myName {
-    color: Red;
+  color: Red;
 }
 
 .mitchsName {
-    color: pink;
+  color: pink;
 }
 
-.dansName{
-    color:darkgreen;
-}
-
-
-.pics-carousel {
-    border-radius: 1em;
-    padding-right: 1002px;
+.dansName {
+  color: darkgreen;
 }

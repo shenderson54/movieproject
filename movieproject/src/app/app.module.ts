@@ -19,6 +19,7 @@ import { MatChipInput, MatChipsModule } from '@angular/material/chips';
 import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { SearchFiltersComponent } from './search-filters/search-filters.component';
 import { FilterPipe } from './search/filter.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -50,6 +51,7 @@ import { FilterPipe } from './search/filter.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     IvyCarouselModule,
+    NgxPaginationModule,
 
 
   ],
